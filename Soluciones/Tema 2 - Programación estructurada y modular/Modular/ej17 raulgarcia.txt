@@ -1,0 +1,45 @@
+Realiza un algoritmo que resuelva una ecuación de segundo grado. El programa
+pedirá por teclado los tres coeficientes y mostrará las posibles soluciones: No tiene
+solución, una única solución (y su valor) o dos soluciones (y sus valores)
+
+ALGORITMO PRINCIPAL
+	a, b, c, sol, sol2 Son Reales
+INICIO
+	leer a
+	leer b
+	leer c
+
+	calcular=calcularR(a,b,c)
+
+	si(calcular>=0)entonces
+		sol=solucion(calcular,sol2);
+		Escribir "Tiene dos soluciones ", sol , " y la otra es ", sol2
+	sino
+		escribir "No tiene solucion" 
+	fin si 
+
+
+FIN
+-------------------------------------
+real calcularR(real x, real y, real z
+Declaracion	
+	resRaiz real
+Inicio
+
+	resRaiz=y^2 -4 * x *z
+	devolver resRaiz
+Fin
+---------------------------------
+real solucion(raiz real, (ref)calc2 real)
+Declaracion	
+	calc1 es real 
+Inicio 	
+
+		calc1=(-b +raiz)/(2*A)
+		calc2=(+b +raiz)/(2*A)
+		devolver calc1		
+Fin
+	
+	
+		
+	

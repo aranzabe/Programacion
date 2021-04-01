@@ -1,0 +1,80 @@
+calculaTiradas((ref)dado1,(ref)dado21,(ref)dado22 son enteros)
+	
+Inicio
+	dado1 = aleatorio(1,6)
+	dado21 = aleatorio(1,6)
+	dado22 = aleatorio(1,6)
+Fin
+------------------------------------------------------------------------------------------------------------
+carácter quienPierde(dadosW,dW1,dW2,dN1,dN2,(ref)soldW,(ref)soldN son enteros,(ref)cambio es lógico)
+    pierde es carácter
+
+Inicio
+    Si dadosW == 1
+        Si dW1 >= dN1 o dW1 >= dN2
+            pierde = 'N'
+            soldN = soldN - 1
+            cambio = Verdadero
+        SiNo
+            pierde = 'W'
+            soldW = soldW - 1
+            cambio = Falso
+        FinSi
+    SiNo
+        Si dN1 >= dW1 o dN1 >= dW2
+            pierde = 'W'
+            soldW = soldW - 1
+            cambio = Verdadero
+        SiNo
+            pierde = 'N'
+            soldN = soldN - 1
+            cambio = Falso
+        FinSi
+    FinSi
+    Devolver pierde
+Fin
+------------------------------------------------------------------------------------------------------------
+cambioDados((ref)dadosN,(ref)dadosW son enteros, cambio es lógico)
+	aux es entero
+	
+Inicio
+	Si (cambio == Verdadero)
+		aux = dadosN
+		dadosN = dadosW
+		dadosW = aux
+	FinSi
+Fin
+--------------------------------------------------------------------------------------------
+Algoritmo principal
+	dN1, dN2, dW1, dW2 son enteros
+	soldN, soldW son enteros
+	dadosN, dadosW son enteros
+	perdedor es carácter
+	cambio es lógico
+
+Inicio	
+	soldN = 50
+	soldW = 50
+	dadosN = 2
+	dadosW = 1
+	
+	Repetir
+		Si (dadosN == 2)
+			calculaTiradas((ref)dW1,(ref)dN1,(ref)dN2)
+            Escribir "N: ", dN1, dN2
+			Escribir "W: ", dW1
+		SiNo
+			calculaTiradas((ref)dN1,(ref)dW1,(ref)dW2)
+			Escribir "N: ", dN1
+			Escribir "W: ", dW1, dW2
+		FinSi
+		perdedor = quienPierde(dadosW,dW1,dW2,dN1,dN2,(ref)soldW,(ref)soldN,(ref)cambio)
+		Escribir "Situación: N = ", soldN, " y W = ", soldW
+		Escribir perdedor, " pierde un hombre"
+		cambio = cambioDados((ref)dadosN,(ref)dadosW,cambio)
+		Si (cambio == Verdadero)
+			Escribir "Cambia el turno de ataque"
+		FinSi
+    MientrasQue (soldN != 0 y soldW != 0)
+    Escribir perdedor, " ha perdido la guerra"
+Fin

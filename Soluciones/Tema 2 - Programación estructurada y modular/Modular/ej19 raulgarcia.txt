@@ -1,0 +1,37 @@
+Diseña un programa modular que pregunte al usuario la fecha actual y la fecha de
+nacimiento de una persona; el programa determinará la edad.
+
+DECLARACION
+d_h,m_h,a_h,d_nac,m_nac,a_nac son enteros 
+INCIO
+	leer d_h
+	leer m_h
+	leer a_h
+
+	leer d_n
+	leer m_n
+	leer a_n
+
+	calcular=calcularFecha(d_h,m_h,a_h,d_n,m_n,a_n)
+
+	Escribir("Tu eda es " + calcular) 
+
+
+FIN
+---------------------------------------------------
+
+entero calcularFecha (dia_h,mes_h,anio_h,dia_nac,mes_nac,anio_nac son enteros)
+DECLARACION
+	edad entero 
+
+INCIO
+	edad=anio_h-anio_nac -1 
+
+	si (mes_h== mes_nac y dia_h == dia_nac)
+		edad=edad+1
+	fin si
+
+	devolver edad 
+			
+
+FIN

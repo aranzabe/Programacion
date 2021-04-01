@@ -1,0 +1,45 @@
+DECLARACION
+    int num,contar
+
+INICIO
+    leer num
+    cambiar=cambiarnum(num)
+    restar = num - cambiar
+    cambio2=cambiarnum(restar)
+    suma=restar+cambio2
+    escribir suma 
+FIN
+-------------------
+entero cuantas_cifras(int num)
+cont es entero 
+Inicio
+    cont=0
+	mientras num!=0 hacer 
+		num= n div 10
+		cont=cont+1
+	FinMientras
+devolver cont 
+Fin 
+------------------------
+int cambiarnum(num)
+    cambiado es entero
+    primero, ultimo son enteros
+    cuantos es entero
+Inicio
+    cambiado = 0
+    primero = num mod 10
+    num = num div 10
+    cont = 1
+    cuantos = cuantas_cifras(num)
+    Mientras num > 10 //Mientras que haya más de un dígito
+        digito = num mod 10
+        num = num div 10
+        cambiado =cambiado + digito * 10^cont
+        cont = cont + 1
+    FinMientras
+    cambiado = cambiado + num
+    cambiado = cambiado + primero * 10^(cuantos-1)
+
+	devolver cambiado 
+Fin 
+

@@ -1,0 +1,155 @@
+DECLARACION 
+    int valor1, valor2,valor3, puntosOrde, puntosHumano, corr1, corr2, sol, sol2, puntosOrde2
+    cadena j1,or1,or2,carta
+    turno, op es caracter 
+INICIO
+        puntosHumano=0
+        puntosOrde=0
+        puntosOrde2=0
+        valor=0
+        valor1=0
+        valor2=0
+        valor3=0
+        op='s'
+        
+		turno='H'
+        
+		j1=repartirCarta(valor1)
+        or1=repartircarta(valor2)
+        or2=repartircarta(valor3)
+        
+        escribir ("La carta del jugador1 es " + j1 + " , la carta del odenador1 es " + or1
+                    + " , la carta del ordenador 2 es " + or2)
+        
+        carta=repartircarta(valor)
+        escribir "La carta repartida es " + carta 
+        
+        repetir
+            mientras (op=='s' y turno=='H')
+                    escribir"Quieres quedarte con ella 's' o 'n' " 
+                    leer op
+                    comp= comprobacionCarta(j1,carta)
+                    si comp==true y op=='s' entonces
+                        puntosHumano+=valor1
+                        j1=repartirCarta(valor1)
+                        escribir("la carta es " + j1)
+                        carta=repartircarta(valor)
+                        escribir("la carta repartida es " + carta)
+                    sino
+                        turno=='O'
+                    fin si 
+            fin mientras
+
+             mientras (turno=='O')
+                    comp= comprobacionCarta(or1,carta)
+                    corr1=azar(100)+1
+                    si comp==true y corr1>50 entonces
+                        puntosOrde+=valor2
+                        or1=repartirCarta(valor2)
+                        carta=repartircarta(valor)
+                    sino
+                        turno=='P'
+                    fin si 
+
+            fin mientras
+
+             mientras (turno=='P')
+                    comp= comprobacionCarta(or2,carta)
+                    corr2=azar(100)+1 
+                    sol=corr+valor
+                    sol2=100-sol
+                    si comp==true y sol>sol2 entonces
+                        puntosOrde2+=valor3
+                        or1=repartirCarta(valor3)
+                        carta=repartircarta(valor)
+                    sino
+                        turno=='H'
+                    fin si 
+
+            fin mientras
+	mientras que (puntosHumano<100 y puntosOrde<100 y puntosOrde2<100 )
+    
+    quiengana=ganador(puntosHumano,puntosOrde,puntosOrde2)
+    
+    si quien==1 entonces
+        escribir(" Ganador humano )
+    sino
+        si(quien==2) entonces
+            escribir "Ganador ordenador1" 
+        sino
+            escribir "Ganador ordenador2 " 
+        fin si 
+    fin si 
+
+FIN 
+------------------------------
+
+cadena repartirCarta(int (ref)val)
+    int x, num
+    palo, unir, res cadena 
+INICIO
+     x=azar(12)+1
+
+    mientras(x >7 o x <10)
+        
+        si(x >7 o x <10) entonces         
+            x =azar(12)+1
+        fin si 
+    
+    fin mientras
+    
+    val=x
+    
+    num=azar(4) +1
+    
+    segun num
+        caso1: palo="oros"
+        caso2: palo="copas"
+        caso3: palo="bastos"
+        caso4: palo="espadas" 
+    fin segun 
+    
+    segun x
+        caso1: unir= "as de " 
+        caso2: unir= "dos de " 
+        caso3: unir= "tres de " 
+        caso4: unir= "cuatro de "
+        caso5: unir= "cinco de " 
+        caso6: unir= "seis de " 
+        caso7: unir= "siete de " 
+        caso10: unir= "sota de " 
+        caso11: unir= "caballo de " 
+        caso12: unir= "rey de " 
+    fin segun 
+
+    res= palo + unir
+    devolver res 
+FIN 
+-----------------------------------
+logico comprobacionCarta(cadena jugador, cadena car)
+
+INICIO
+
+    si jugador==car entonces
+        devolver true
+    sino
+        devolver false 
+    fin si 
+
+
+FIN 
+-------------------------
+ganador(puntosHumano,puntosOrde,puntosOrde2)
+
+INICIO
+    si (puntosHumano==100) entonces
+        devolver 0 
+    sino
+        si(puntosOrde==100) entonces
+            devolver 1 
+        sino
+            dovolver 2 
+        fin si 
+    fin si 
+FIN 
+

@@ -1,0 +1,61 @@
+Algoritmo principal
+numbin es Entero
+
+Inicio
+
+	Repetir
+	
+        Leer numbin
+        estaBien = Comprobacion(numbin)
+	    Si estaBien == Falso
+		    Escribir "El numero es Invalido, vuelva a escribirlo"
+	    FinSi
+		Mientras estaBien == Falso
+
+	Escribir CompA1(numbin)
+
+Fin
+-------------------------------------------------------------------------------------
+Logico Comprobacion (numbin es Entero)
+
+Digito es Entero
+logic es Entero
+
+Inicio     
+
+    Repetir
+	    Digito == numbin mod 10
+
+		Si digito <> 1 o digito <> 0
+			logic = Falso
+		Sino
+			logic = Verdadero
+		Finsi
+
+
+	    numbin = numbin div 10
+
+	Mientras logic == Verdadero y numbin <>0
+Devolver (logic)
+Fin
+----------------------------------------------------------------------------------------
+Entero CompA1(numbin)
+
+Digito es Entero 
+compa1 es Entero
+SumaE es Entero
+
+Inicio
+	SumaE= 0
+	Repetir
+		Digito = numbin mod 10
+			Si digito == 1 
+				digito = 0
+			Sino
+			    digito = 1
+			Finsi
+	    numbin = munbin div 10
+	    compa1 = digito * 10 ^ SumaE + compa1
+	    sumaE= sumaE + 1
+    Mientras numbin <> 0
+Devolver (compa1)

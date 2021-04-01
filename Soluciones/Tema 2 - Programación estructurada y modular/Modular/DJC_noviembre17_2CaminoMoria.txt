@@ -1,0 +1,80 @@
+entero construyeNum(F1,F2,S1,S2 son enteros)
+	num es entero
+	exp es entero 
+	
+Inicio
+	num = S2
+	num = num + S1 * 10^(cuentaCifras(num))
+	num = num + F1 * 10^(cuentaCifras(num))
+	num = num + F2 * 10^(cuentaCifras(num))
+	Devolver num
+Fin
+----------------------------------------------------------------------
+entero cuentaCifras(num es entero)
+	cifras es entero
+
+Inicio
+	Repetir
+		num = num div 10
+		cifras = cifras + 1
+	MientrasQue (num != 0)
+	Devolver(cifras)
+Fin
+----------------------------------------------------------------------
+sumaNúmeros((ref)F1,(ref)F2,(ref)S1,(ref)S2 son enteros)
+
+Inicio
+	F1 = F1 + 1
+	F2 = F2 + 1
+	S1 = S1 + 1
+	S2 = S2 + 1
+Fin
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+Algoritmo principal
+	F1, F2, S1, S2 son enteros
+	numOriginal, numSumado son enteros
+	turno es entero
+	pFrodo, pSam son enteros
+	
+Inicio
+	Escribir "Elige dos números positivos, Frodo"
+	Leer F1
+	Leer F2
+	Escribir "Elige dos números positivos, Sam"
+	Leer S1
+	Leer S2
+	Escribir "Éstos son vuestros números:"
+	numOriginal = construyeNum(F1,F2,S1,S2)
+	Escribir numOriginal
+	
+	turno = 1
+	Repetir
+		sumaNúmeros(F1,F2,S1,S2)
+		numSumado = construyeNum(F1,F2,S1,S2)
+		Escribe "Frodo: ", numSumado
+		Si (cuentaCifras(numSumado) > cuentaCifras(numOriginal))
+		    pFrodo = pFrodo + 1
+	    FinSi
+		
+		sumaNúmeros(F1,F2,S1,S2)
+		numSumado = construyeNum(F1,F2,S1,S2)
+		Escribe "Sam: ", numSumado
+		Si (cuentaCifras(numSumado) > cuentaCifras(numOriginal))
+		    pSam = pSam + 1
+	    FinSi
+		
+		turno = turno + 1
+	MientrasQue (turno <= 10)
+	
+	Si (pFrodo > pSam)
+		Escribir "Frodo ha ganado"
+	FinSi
+	Si (pSam > pFrodo)
+		Escribir "Sam ha ganado"
+	FinSi
+	Si (pFrodo == pSam)
+		Escribir "Frodo y Sam han empatado"
+	FinSi
+Fin

@@ -1,0 +1,44 @@
+COMPLEMETO A 1 
+
+DECLARACION
+    logico comp
+    int n 
+
+INICIO
+        repetir 
+            leer num
+            comp=compNum(num)
+        hasta que comp==true 
+        
+        numero=complementoa1(num)
+        
+        escribir("El numero a complemento a1 es " + numero )
+FIN
+----------
+
+int complementoa1(int n)
+
+    int comple, dig,cont
+INICIO
+    repetir 
+        dig= n mod 10 
+        comple=comple+dig*10^cont
+        cont++
+        n=n div 10
+    hasta que n!=0 
+    devolver comple
+FIN 
+----------------
+LOGICO compNum(int n) 
+logico op 
+dig int 
+INICIO
+    dig= n mod 10
+    si(dig==1 o dig==0) entonces
+        op=true 
+    sino
+        op=false 
+    fin si 
+    n=n div 10 
+    devolver op
+FIN

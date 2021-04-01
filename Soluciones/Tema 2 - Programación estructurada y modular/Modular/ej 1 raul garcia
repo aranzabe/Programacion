@@ -1,0 +1,32 @@
+real perimetro (l es real)
+    per es real 
+Inicio
+    per=4*l
+    devolver per 
+Fin 
+--------------------------
+real superficie (l es real)
+    sup es real 
+Inicio    
+     sup= l^2
+     devolver sup 
+
+Fin 
+
+---------------------------------------
+INICIO 
+    sup, per, lado son reales
+    
+    Leer (lado)
+    Escribir (lado 
+    
+    per=perimetro(lado)
+    sup=superficie(lado)
+    
+    
+    Escribir (per)
+    Escribir (sup)
+
+
+
+FIN 

@@ -1,0 +1,69 @@
+Algoritmo principal
+
+a,b,c son enteros
+
+Inicio
+	
+	escribir"Introduce un numero"
+		leer a
+
+	escribir"Introduce un numero"
+		leer b
+
+	escribir"Introduce un numero"
+		leer c
+
+	menor = calculaMenor(a,b,c)
+		escribir menor
+	
+	mediano = calculaMediano(a,b,c)
+		escribir mediano
+	
+	mayor = calculaMayor(a,b,c)
+		escribir mayor
+
+Fin
+
+----------------------------------------------
+entero calculaMenor (x es entero, y es entero, z es entero)
+
+Inicio
+	si x < y and x < z
+		Devolver (x)
+	FinSi
+	si y < a and y < z
+		Devolver (y)
+	FinSi
+	si z < y and z < x
+		Devolver (z)
+	FinSi
+Fin
+
+entero calculaMediano (x es entero, y es entero, z es entero)
+
+Inicio
+	si x < y and x > z
+		Devolver (x)
+	FinSi
+	si y < z and y > x
+		Devolver (y)
+	FinSi
+	si z < y and z > x
+		Devolver (z)
+	FinSi
+Fin
+
+
+entero calculaMayor (x es entero, y es entero, z es entero)
+
+Inicio
+	si x > y and x > z
+		Devolver (x)
+	FinSi
+	si y > a and y > z
+		Devolver (y)
+	FinSi
+	si z > y and z > x
+		Devolver (z)
+	FinSi
+Fin

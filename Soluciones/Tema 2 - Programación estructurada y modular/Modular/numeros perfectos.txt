@@ -1,0 +1,45 @@
+--------------------------
+real calcPerf (num es real)
+cont,suma es entero
+resultado es logico
+
+Inicio    
+    cont=0
+	mientras (cont<num)
+		cont=cont+1
+			si(cont mod num==0)
+				sum=sum+cont
+			finsi
+	fin mientras
+
+	si (suma==num)
+		resultado=verdadero
+	finsi
+devolver resultado
+	
+Fin 
+
+---------------------------------------
+INICIO 
+sol el logico
+sol=falso
+   	escribir "Dime un numero"
+		leer num
+	sol=calcPerf(num)
+	si (sol==verdadero)
+		escribir "Es perfecto"
+	sino
+		escribir "No es perfecto"
+-------------------------------------------------------
+	escribir "Vamos a ver los perfectos del uno al 100"
+	num=1
+	mientras (num<100)
+		sol=calPerf(num)
+			si (sol==verdadero)
+				escribir "El numero ",num," es perfecto"
+			finsi
+	num=num+1
+
+
+
+FIN 

@@ -1,0 +1,64 @@
+entero compruebaCifras((ref)cifras_usuario)
+    num, cifras_num son enteros
+    comprueba es lógico
+    
+Inicio
+    cifras_num = 0
+    
+    Repetir
+        Leer(cifras_usuario)
+        Leer(num)
+        
+        Repetir
+            num = num div 10
+            cifras_num = cifras_num + 1
+        MientrasQue (num != 0)
+        
+        Si (cifras_num == cifras_usuario)
+            comprueba = Verdadero
+        SiNo
+            comproeba = Falso
+        FinSi
+    MientrasQue (comprueba == Falso)
+    Devolver(num)
+Fin
+------------------------------------------------------------
+cambiaCifras(num1 es entero)
+    num2 es entero
+    dig1, digFinal es entero
+    exp es entero
+
+Inicio
+    num2 = num1
+    exp = 0
+    digFinal = num1 mod 10
+    Repetir
+        num1 = num1 div 10
+        exp = exp + 1
+    MientrasQue (num1 < 10)
+    
+    dig1 = num1
+    num2 = num2 - dig1^exp + digFinal^exp
+    num2 = num2 - digFinal + dig1
+    
+    Devolver(num2)
+Fin
+------------------------------------------------------------
+Algoritmo principal
+    n1, n1b, n2, n2b son enteros
+    cif es entero
+    n1089 es entero
+
+Inicio
+    n1 = compruebaCifras((ref)cif)
+    n1b = cambiaCifras(n1)
+    Si (cif == 3)
+        n2 = abs(n1 - n2)
+        n2b = cambiaCifras(n2)
+        n1089 = n2 + n2b
+        Si (n1089 == 1089)
+            Escribir "La propiedad se cumple"
+        FinSi
+    FinSi
+Fin 
+        

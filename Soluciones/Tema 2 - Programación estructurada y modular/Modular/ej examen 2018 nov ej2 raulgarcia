@@ -1,0 +1,63 @@
+BATALLA DE WATERLOO
+
+DECLARACION
+    int W,N,cont
+
+
+INICIO
+    cont=0
+    We=50
+    Na=50
+    repetir
+        si cont mod 2==0 entonces
+            ataque=lanzaDadosAt(dado1,dado2)
+            defena=lanzaDadosDef(dado3) 
+            
+            resolucion(ataque,defensa,We,Na,cont) 
+            
+        fin si
+        
+        si cont mod 2==1 entonces
+            ataque=lanzaDadosAt(dado1,dado2)
+            defena=lanzaDadosDef(dado3) 
+            resolucion(ataque,defensa,We,Na,cont) 
+        fin si
+        cont++
+    hasta que (We>0 o Na>0)
+
+FIN 
+-----------------
+resolucion(ataque,def,(ref)Wel, (ref)Nap,conta)
+INICIO
+    si(conta mod 2==0)entonces 
+            si(ataque>defensa)entonces
+                Wel--
+            sino 
+                Nap--
+            fin si 
+    sino 
+            si(ataque>defensa)entonces
+                Wel--
+            sino 
+                Nap--
+            fin si 
+    fin si 
+        
+Fin 
+    
+--------------------
+lanzaDadosAt(d1,d2)
+    int suma 
+INICIO
+    d1=azar(6)+1
+    d2=azar(6)+1
+    suma=d1+d2
+    devolver suma 
+FIN 
+-----------------------
+lanzaDadosDef(d)
+
+INICIO
+    d=azar(6)+1
+    devolver d 
+FIN

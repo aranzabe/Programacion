@@ -1,0 +1,23 @@
+ALGORITMO PRINCIPAL
+
+num1, num2 son enteros
+
+Inicio
+
+	Escribir "Escribe un numero de tres cifras"
+	leer num1
+
+	num2 = calculaNum2 (num1)
+	Escribir num2
+Fin
+---------------------------------------------------	256
+	
+entero calculaNum2 (numero1 es entero)
+numero2 es entero
+
+Inicio
+
+	numero2 = (numero1 mod 10) * 100 + (numero1 mod 100) - (numero1 mod 10) + (numero1 div 100)
+	Devolver (numero2)
+
+Fin

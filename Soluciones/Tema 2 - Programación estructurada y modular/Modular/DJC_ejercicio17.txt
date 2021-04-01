@@ -1,0 +1,50 @@
+Entero calculaEcSeg((ref)x1, (ref)x2, a, b, c son reales)
+    solucion es entero
+	op_raiz es real
+
+Inicio
+	op_raiz = b² - 4 * a * c
+    Si (op_raiz < 0)
+        solucion = 0
+    SiNo
+        Si (op_raiz == 0)
+            solucion = 1
+            x1 = -b / (2 * a)
+        FinSi
+        Si (op_raiz > 0)
+            solucion = 2
+            x1 = (-b + rc(op_raiz)) / (2 * a)
+            x2 = (-b - rc(op_raiz)) / (2 * a)
+        FinSi
+    FinSi
+	Devolver(solucion)
+Fin
+---------------------------------------------------------------------
+Algoritmo principal
+    num_a, num_b, num_c, x_1, x_2 son reales
+    sol es entero
+
+Inicio
+    Escribir "Este programa calcula una ecuación de segundo grado"
+    Escribir "Dame el coeficiente a"
+    Leer num_a
+    Escribir "Dame el coeficiente b"
+    Leer num_b
+    Escribir "Dame el coeficiente c"
+    Leer num_c
+    
+    
+    sol = calculaEcSeg(x_1,x_2,num_a,num_b,num_c)
+    Segun sol
+		0:
+			Escribir "La ecuación no tiene solución real"
+		1:
+			Escribir "La ecuación tiene una solución"
+			Escribir "x = ", x_1
+		2:
+			Escribir "La ecuación tiene dos soluciones"
+			Escribir "x1 = ", x_1
+			Escribir "x2 = ", x_2
+	FinSegun
+Fin
+	

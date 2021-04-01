@@ -1,0 +1,33 @@
+algoritmo principal
+    h, m, s son reales
+    resultado es real
+
+inicio
+    escribir"dime una hora"
+    leer h
+    escribir"dime los minutos"
+    leer m
+    escribir "dime por ultimo sus segundos"
+    leer s
+    escribir "vamos a añadirle un segundo a todo ello "
+    calcHora(h,m,s)
+    escribir "La hora es: ", h,":",m,":",s
+fin
+-----
+
+calcHora((ref)hora, (ref)min, (ref)sec son reales)
+inicio
+    sec=sec+1;
+	si (sec==60)
+		sec=0;
+		min=min+1;
+	FinSi
+	si (min==60)
+		min=0
+		hora=hora+1;
+	FinSi
+	si (hora==24)
+		hora=0;
+	FinSi
+fin
+

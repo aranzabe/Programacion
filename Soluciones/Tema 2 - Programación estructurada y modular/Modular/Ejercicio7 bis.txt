@@ -1,0 +1,25 @@
+Algoritmo principal
+	grados es real
+	gradosConv es real
+	tipoConv es carácter/letra
+Inicio
+	Escribir "A qué lo quieres convertir?"
+	Leer tipoConv
+	Escribir "Dame los grados: "
+	Leer grados
+	gradosConv = convertir(grados, tipoConv)
+	Escribir "Convertidos: ", gradosConv
+Fin
+
+-----------------------------------
+Real convertir(g es real, t es letra)
+    result es real
+Inicio
+    si (t == 'c' o t == 'C')
+        result = (g - 32)*5/9
+    sino
+        result = (9 / 5 * g)+32
+    Finsi
+    devolver(result)
+Fin
+

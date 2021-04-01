@@ -1,0 +1,36 @@
+lógico esKaprekar(numOriginal es entero)
+	numCuadrado, exp, dcha, izda, suma son enteros
+	kaprekar es lógico
+
+Inicio
+	exp = 1
+    numCuadrado = numOriginal^2
+	Repetir
+		dcha = numCuadrado mod 10^exp					
+		izda = numCuadrado div 10^exp
+		suma = dcha + izda
+		Si (suma == numOriginal)
+			kaprekar = Verdadero
+		SiNo
+			kaprekar = Falso
+		FinSi
+		exp = exp + 1
+	MientrasQue (numCuadrado != 0 y kaprekar == Falso)
+	Devolver(kaprekar)
+Fin
+-------------------------------------------------------------------------------------------------
+Algoritmo principal
+	num es entero
+	
+Inicio
+	Escribir "Este programa muestra los números de Kaprekar del 1 al 1000"
+	num = 1
+	Repetir
+		Si (esKaprekar(num) == Verdadero)
+			Escribir num
+		FinSi
+		num = num + 1
+	MientrasQue (num >= 1 y num <=10000)
+Fin
+
+

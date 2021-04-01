@@ -1,0 +1,73 @@
+ALgoritmo Principal
+
+numero es Entero
+numero2 es Entero
+resta es Entero
+suma es Entero
+
+Inicio
+    Repetir
+        Leer numero
+        Leer digitos
+    Mientras numCorrect(numero, digitos)==false
+
+	numero2 = Num1084 (numero, digitos)
+	resta= numero - numero2
+    invresta = Num1084 (resta, digitos)
+    suma = resta + invresta
+	Escribir suma
+Fin
+----------------------------------------------------------------------------------------------------
+Logico numCorrect (numero es Entero, Ndigit es entero)
+
+Cont es Entero
+Correct es Logico
+
+Inicio
+        cont = 0
+		Mientras numero > 0
+            numero = numero div 10
+            cont = cont + 1
+		FinMientras
+        Si cont == Ndigit
+			Correct = Verdadero
+		Sino 
+			Correct = Falso
+		FinSi
+
+	Devolver (Correct)
+
+Fin
+------------------------------------------------------------------------------------------------
+Entero Num1084 (numero es Entero, numero2 es entero)
+
+num1 es Entero
+num2 es Entero
+numfin es Entero
+numsave es Entero
+Cont es Entero
+
+		Repetir
+
+	cont= 0
+	num1=numero
+	numsave= numero
+	numfin= numero mod 10
+	
+
+		Repetir
+
+			num1= numero div 10
+			cont = cont + 1
+
+		Mientras num1 > 10
+
+
+			numfin= numfin * 10 ^ cont
+			numsave= numsave mod 10 ^ cont
+			numsave= numsave - numsave mod 10
+			numsave= numsave + numfin + num1
+			
+	
+            Devolver (numsave)
+

@@ -1,0 +1,25 @@
+Entero calculaDivision(dividendo,(ref)divisor son enteros)
+    cociente es entero
+
+Inicio
+    cociente = 0
+    Repetir
+        dividendo = dividendo - divisor
+        cociente = cociente + 1
+    MientrasQue dividendo >= divisor
+    Devolver(cociente)
+Fin
+-------------------------------------------------------------------------------------------------------
+Algoritmo principal
+    div1, div2, c son enteros
+    
+Inicio
+    Escribir "Este programa calcula el cociente y el resto de una división mediante restas sucesivas"
+    Escribir "Dame el dividendo"
+    Leer div1
+    Escribir "Dame el divisor"
+    Leer div2
+    
+    c == calculaDivision(div1,div2)
+    Escribir "El resultado de la división es ", c, ", con resto " div2
+Fin

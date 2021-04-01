@@ -1,0 +1,33 @@
+real superficie(real radio)
+DECLARACION
+    real res 
+INICIO
+    res=Pi*r^2	
+    devolver res 
+FIN 
+
+real perimetro(real radio)
+DECLARACION
+    real res 
+INICIO
+    res=2*pi*r	
+    devolver res 
+FIN 
+
+
+
+------------------------------------------------
+ALGORITMO PRINCIPAL 
+
+DECLARACION 
+sup, cir, r  son reales 
+INICIO
+    Escribir ( “Dime radio”)
+    leer(r)
+    sup=superficie(r)
+    cir=circuferencia(r)
+    
+    escribir ("La superficie es " + sup)
+    escribir ("La circuferencia es " + cir)
+
+FIN 

@@ -1,0 +1,68 @@
+21º Realiza un programa que permita convertir modularmente números binarios en  decimales y viceversa. 
+
+
+
+DECLARACION 
+op cadena
+n, sol entero 
+INICIO
+
+escribir "que quieres conventir a , binario/decimal"
+leer op
+
+	si op==binario entonces
+		leer n 
+		sol=binario(n)
+		escribir sol 	
+	sino
+
+		si op==decimal entonces
+			leer n
+			sol=decimal(n)
+		sino
+			escribir "Operación incorrecta" 
+		fin si 
+	fin si 
+
+
+FIN
+------------------------------
+int decimal (int num)
+	cont, dec int;
+Inicio
+	cont=0
+	dec=0 
+	mientras num>=1 hacer
+		si num mod 10==1 entonces
+			dec=dec+ 2^cont;
+		fin si 
+
+		cont++
+		num=num div 10 		
+
+	fin mientras
+
+	devolver dec 
+
+Fin
+
+-------------------------
+entero binario(int num)
+bin entero
+cont es entero 
+Inicio
+    	cont=0
+	bin=0
+	mientras num>=1 hacer 
+		
+		si num mod 2 ==1 entonces
+			bin=bin+ 10^cont
+		fin si 
+		
+		num= num div 2
+		cont++
+	FinMientras	
+	devolver bin
+
+Fin 
+--------------------------------------------------------

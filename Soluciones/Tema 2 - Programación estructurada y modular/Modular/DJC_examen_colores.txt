@@ -1,0 +1,69 @@
+carácter colorNum(num1, num2, num3, posnum, apuesta, posApuesta son enteros)
+	color es carácter
+
+Inicio
+	Si (apuesta == num1 o apuesta == num2 o apuesta == num3)
+		Si (posApuesta == posnum)
+			color = 'V'
+		SiNo
+			color = 'A'
+		FinSi
+	SiNo
+		color = 'R'
+	FinSi
+	Devolver(color)
+Fin
+----------------------------------------------------------------------------------------------------------------
+lógico esVictoria(color1, color2, color3 son carácter)
+	victoria es lógico	
+
+Inicio
+	Si (color1 = 'V' y color2 = 'V' y color3 = 'V')
+		victoria = Verdadero
+	SiNo
+		victoria = Falso
+	FinSi
+	Devolver(victoria)
+Fin
+----------------------------------------------------------------------------------------------------------------
+Algoritmo principal
+	n1, n2, n3 son enteros
+	apu1, apu2, apu3 son enteros
+	col1, col2, col3
+	int es entero
+
+Inicio
+	Escribir "MasterMind"
+	Escribir "El ordenador va a pensar en tres números del 0 al 9 en tres posiciones diferentes"
+	Escribir "Tienes que adivinar qué número hay en cada posición. Tienes 5 intentos"
+	Escribir "Cuando introduzcas los números, el ordenador te dirá por un código de colores cómo lo has hecho"
+	Escribir "Verde (V): el número está en la posición correcta"
+	Escribir "Amarillo (A): el número está, pero no en la posición correcta"
+	Escribir "Rojo (R): el número no está"
+	
+	n1 = azar(0,9)
+	n2 = azar(0,9)
+	n3 = azar(0,9)
+	int = 5
+	Repetir
+		Escribir "Te quedan ", int, " intentos"
+		Escribir "Intenta adivinar los números"
+		Leer apu1
+		Leer apu2
+		Leer apu3
+		
+		col1 = colorNum(n1,n2,n3,1,apu1,1)
+		col2 = colorNum(n1,n2,n3,2,apu2,2)
+		col3 = colorNum(n1,n2,n3,3,apu3,3)
+		Escribir "Tus números: ", apu1, " ", apu2, " ", apu3
+		Escribir "Tus aciertos: ", col1, " ", col2, " ", col2
+		int = int - 1
+	MientrasQue (int > 0 y esVictoria(col1,col2,col3) == Falso)
+    
+        Si (esVictoria(col1,col2,col3) == Verdadero)
+			Escribir "Enhorabuena, has ganado"
+		SiNo
+			Escribir "Inténtalo de nuevo"
+            Escribir n1,n2,n3
+		FinSi
+Fin

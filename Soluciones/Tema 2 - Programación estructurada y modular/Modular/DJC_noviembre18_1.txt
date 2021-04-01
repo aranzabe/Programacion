@@ -1,0 +1,50 @@
+Lógico esPerfecto(num es entero)
+	perfecto es lógico
+	div es entero
+	suma es entero
+	
+Inicio
+	suma = 0
+	div = 1
+	MientrasQue (num > div)
+		Si (num mod div == 0)
+			suma = suma + div
+		FinSi
+		div = div + 1
+	FinMientras
+	
+	Si (suma == num)
+		perfecto = Verdadero
+	SiNo
+		perfecto = Falso
+	FinSi
+	Devolver(perfecto)
+Fin 
+-------------------------------------------------------------------------------
+Algoritmo principal
+	n es entero
+	
+Inicio
+	Escribir "Este programa escribe todos los números perfectos del 1 al 1000"
+	n = 1
+	
+	Mientras (n <= 1000)
+		Si (esPerfecto(n) == Verdadero)
+			Escribir n
+		FinSi
+		n = n + 1
+	FinMientras
+Fin 
+-------------------------------------------------------------------------------
+Algoritmo principal
+	n es entero
+	
+Inicio
+	    Escribir "Dame un número: "
+        Leer n
+		Si (esPerfecto(n) == Verdadero)
+			Escribir "Sí lo es"
+        SiNo
+            Escribir "No lo es"
+		FinSi
+Fin 

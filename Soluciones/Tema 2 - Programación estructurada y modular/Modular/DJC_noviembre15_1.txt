@@ -1,0 +1,44 @@
+Entero calculaPuntos(jugador es entero)
+	puntos es entero
+	tiro es entero
+	cont es entero
+	
+Inicio
+	cont = 1
+	puntos = 0
+	Repetir
+		tiro = azar(1,jugador)
+		Si (tiro == 1)
+		    Si (cont == 5)
+			    puntos = puntos + 2
+            sino
+                puntos = puntos + 1
+            FinSi
+		FinSi
+        cont = cont + 1
+	MientrasQue (cont <= 5)
+	Devolver(puntos)
+Fin 
+---------------------------------------------------------
+Algoritmo principal
+	pgasol es entero
+	pllull es entero
+
+Inicio
+	Escribir "Este programa simula una competición de tiros a canasta entre Gasol y Llull, con diferentes probabilidades de encestar"
+	
+	pgasol = calculaPuntos(3)
+	pllull = calculaPuntos(2)
+	
+	Escribir "Gasol ha anotado ", pgasol, " puntos"
+	Escribir "Llull ha anotado ", pllull, " puntos"
+	Si (pgasol > pllull)
+		Escribir "Gasol ha ganado por ", pgasol - pllull, " puntos"
+	FinSi
+	Si (pllull > pgasol)
+		Escribir "Llull ha ganado por ", pllull - pgasol, " puntos"
+    FinSi
+	Si (pgasol == pllull)
+		Escribir "Gasol y Llull han empatado"
+	FinSi
+Fin

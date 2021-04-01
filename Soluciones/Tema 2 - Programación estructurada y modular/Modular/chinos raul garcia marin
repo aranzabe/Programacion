@@ -1,0 +1,102 @@
+DECLARACION 
+    int chi_hum, tirada_humana, or1,or2,t_ord,total, contHum,contOr, t_ord2, contOr2, quien 
+    logico comp 
+
+INICIO
+    comp=false
+    compro=false 
+    
+    repetir
+        repetir
+            leer chi_hum
+            comp=pedir_chinos_humano (chi_hum) 
+        hasta que comp==true
+        
+        repetir
+            escribir("Desde 0 hasta 9")
+            leer tirada_humana
+            compro=tirada(tirada_humana)
+        hasta que compro==true
+        
+        realizar_tiradas_ordenador(or1,or2,t_ord,t_ord2)
+        total=totalchinos(or1,or2,chi_hum)
+        
+        si (total== t_ord o total==tirada_humana o total==t_ord2) entonces
+            quien=quien_gana(tirada_humana,t_ord, t_ord2, total,contHum,contOr,contOr2) 
+            
+            segun quien 
+                caso1: escribir " humano gana " 
+                caso2: escribir " ordenador gana " 
+                caso3: escribir " ordenador2 gana" 
+            fin segun
+        sino
+            escribir "Otro intento" 
+        fin si 
+    hasta que (contHum==3 o contOr==3 o contOr2==3)
+    
+    
+    si (contHum==3) entonces
+        escribir "Ha ganado humano"
+    sino otro caso: escribir "otro intento" 
+        si (contOr==3) enotonces 
+            escribir "Ha ganado usuario ordenador 1 " 
+        sino 
+            escribir "Ha ganado usuario ordenador 2 " 
+        fin si
+    fin si 
+FIN
+--------------------------------
+logico pedir_chinos_humano(chinos_hum)
+
+INICIO
+    si chinos_hum >=0 y chinos_hum <4 entonces
+        devolver true
+    sino true
+        devolver false
+    fin si 
+FIN
+------------------------------------------
+logico tirada(int t_h)
+
+INICIO
+    si t_h >=0 y t_h<=9entonces
+        devolver true
+    sino true
+        devolver false
+    fin si 
+FIN
+-----------------------------------
+int totalchinos ( o1,o2,c_h son enteros)
+    int total
+INICIO
+    total=o1 + o2 + c_h
+    devolver total
+FIN
+--------------------------------------------
+int realizar_tiradas_ordenador (int (ref)orde1, int (ref)orde2,int (ref)tirada_ord, int (ref)tirada_ord2)
+
+INICIO
+    orde1=azar(4)
+    orde2=azar(4)
+    tirada_ord(10)
+    tirada_ord2(10)
+FIN
+----------------------
+int quien_gana(tir_hum,tir_ord, tir_ord2, tot , (ref)contHuma, (ref)contOrde, (ref)contOrd2 son enteros  )
+    quien entero 
+INICIO
+        si (tir_hum==tot)entonces 
+            contHuma++
+            quien=1
+        fin si  
+        si tir_ord==tot entonces
+            contOrde++ 
+            quien=2 
+        fin si 
+            
+        si tir_ord2==tot entonces 
+            contOrd2++ 
+            quien=3
+        fin si 
+    devolver quien 
+FIN

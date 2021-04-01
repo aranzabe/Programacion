@@ -1,0 +1,52 @@
+Realiza un módulo que me calcule la suma de los dígitos de un número.  Cual suma digito es mayor 
+
+Declaración 
+	n1,n2,suma,suma2 enteros
+	comp logico 
+Inicio 
+        Leer n1 
+        Leer n2 
+        Suma=sumadig(n1)
+        Suma2=sumadig(n2)
+
+        Si suma==suma2 entonces 
+ 		Escribir  "son iguales "
+        Sino 
+		comp=comprobación(suma,suma2) 
+	Fin si 
+
+	Si comp== true entonces 
+		Escribir  suma + " es mayor "
+	Sino 
+		Escribir suma2 + " es mayor"
+	Fin si 
+
+
+Fin 
+
+---------------------------------
+Int sumadig ( int num)
+
+Dig,suma enteros 
+Inicio 
+	Mientras num>0 hacer  
+		Dig=num mod 10 
+		Suma=suma +dig
+		Num=num div 10
+	Fin mientras 
+	Devolver suma 
+
+Fin 
+
+-----------------------------------------------
+
+Lógico comprobación (s, s2 son enteros)
+
+Inicio 
+
+	Si s >s2 entonces 
+		Devolver true 
+	Sino	
+		Devolver false
+	Fin si 
+Fin

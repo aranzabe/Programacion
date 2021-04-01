@@ -1,0 +1,28 @@
+Lógico esBisiesto(year es entero)
+    resto es entero
+    bis es lógico
+    
+Inicio
+    resto = year mod 4
+    Si (resto == 0)
+        bis = Verdadero
+    SiNo
+        bis = Falso
+    FinSi
+    
+    Devolver (bis)
+Fin 
+--------------------------------------------------------
+Algoritmo principal
+    y es entero
+Inicio
+    Escribir "Este programa te dice si un año es bisiesto o no"
+    Escribir "Introduce un año"
+    Leer y
+    
+    Si  esBisiesto(y) == Verdadero
+        Escribir y, " es bisiesto"
+    SiNo
+        Escribir y, " no es bisiesto"
+Fin
+

@@ -1,0 +1,131 @@
+cadena resultadoSala(probabilidad es entero)
+    res es cadena
+    alea es entero
+Inicio
+    res = "pierde"
+    alea = azar(1,100)
+    si (alea <= probabilidad)
+        res = "gana"
+    FinSi
+
+    Devover res
+Fin
+
+//*****************************************************
+//*****************************************************
+//*****************************************************
+AlgoritmoMoria
+ 
+sala es entero
+energia es entero
+ale es entero
+resultado es cadena
+anilloPuesto es lógico
+
+
+Inicio
+ 
+sala= 1
+resultado = "gana"
+ 
+ //Gandalf, legolas y frodo se adentran en moria
+ // 0 es peligro magico, 1 peligro de accion, 2 peligro habilidad, 3 sin peligro 
+ 
+ Repetir
+ 
+    Escribir Tipo_peligro(sala)
+
+    Si (Tipo_peligro(sala) == 0)
+         //------------------ PARA GANDALF --------------------
+        energia = azar(1,10)
+        Recargar_vara((ref) energia) 
+        Escribir Poder_de_la_vara()
+
+        Si (Poder_de_la_vara() > Poder_de_la_sala(sala))
+            resultado= "Gana"
+	        sala= sala + 1
+        FinSi
+
+        Si (Poder_de_la_vara() == Poder_de_la_sala(sala))
+            resultado = resultadoSala(60)
+            si (resultado= "gana")
+	            sala= sala + 1
+            FinSi
+        FinSi
+
+        Si (Poder_de_la_vara() < Poder_de_la_sala(sala))
+           resultado = resultadoSala(30)
+           si (resultado= "gana")
+	            sala= sala + 1
+           FinSi
+        FinSi
+    FinSi //------ GANDALF ha actuado
+
+    
+
+    //--------------- LEGOLAS ----------------
+    Si (Tipo_peligro(sala) == 1)
+        flechas = Cuantas_flechas_quedan()
+        Mientras (Quedan_enemigos(sala) y Cuantas_flechas_quedan() > 0)
+       		Lanzar_flechas((ref) flechas) 
+        FinMientras
+    	   
+	    Si (Quedan_enemigos(sala) == Verdadero )
+            resultado= "pierde"
+	    Sino
+		    flechas = Flechas_encontradas(sala) 
+		    Recargar_carcaj((ref) flechas)
+		    restulado= "gana"
+		    sala= sala + 1
+	    FinSi
+    FinSi  //------------- Fin de la actuación de Légolas ------------
+
+
+    //------------ ACTÚA FRODO --------------
+    Si (Tipo_peligro(sala) == 2)
+        ale = azar(1,2)
+        Si (ale == 1)
+            Ponerse_anillo((ref) anilloPuesto)
+            resultado = resultadoSala(90)
+            si (resultado= "gana")
+	            sala= sala + 1
+            FinSi
+        SiNo
+            Quitarse_anillo((ref) anilloPuesto) 
+            resultado = resultadoSala(20)
+            si (resultado= "gana")
+	            sala= sala + 1
+            FinSi
+        FinSi
+         
+    FinSi  //---- Acaba de actuar FRODO -----
+   
+
+
+    //------- NO HAY PELIGRO ---------------
+    Si (Tipo_peligro(sala) == 3)
+        sala = sala + 1
+    FinSi
+	
+
+
+    //------- SI SE HA PERDIDO EN ALGUNA SALA TRATAMOS DE ESCAPAR -----
+    //Si el equipo pierde, intentan escapar con una probabilidad del 80% de escapar, si no  escapan, mueren y fin del juego.
+
+    resultado = resultadoSala(80)
+	Si (resultado == "gana")
+	   sala = sala + 1
+	FinSi
+
+Mientras (resultado != "pierde" y salas <= 36)
+
+
+
+Si (resultado == "pierde")
+    Escribir "No han sobrevivido a Moria"
+Sino
+    Escribir "Han conseguido atravesar Moria"
+FinSi
+
+FIN
+

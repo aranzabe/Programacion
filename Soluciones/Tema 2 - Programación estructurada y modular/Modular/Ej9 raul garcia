@@ -1,0 +1,29 @@
+Algoritmo cuantas_cifras 
+	//  Determinar el número de cifras de un número de, como máximo, cinco cifras.
+	//  Ejemplos: 9560 debe indicar que tiene 4 cifras; -369 tiene 3 cifras.
+	
+	n,res  Son reales
+	
+	leer n 
+	res=cuantas_cifras(n)
+	
+	Escribir res
+	
+FinAlgoritmo
+--------------------------
+
+entero cuantas_cifras(int num)
+
+cont es entero 
+Inicio
+
+
+	mientras num>0 hacer 
+		num= n / 10
+		num=trunc(n)
+		cont=cont+1
+	FinMientras
+	
+devolver cont 
+
+Fin 

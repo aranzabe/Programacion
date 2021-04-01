@@ -1,0 +1,73 @@
+Algoritmo Principal
+    chiH, chiM1, chiM2 son enteros
+    apuH, apuM1, apuM2 son enteros
+    total es entero
+    partidasH, partidasM1, partidasM2 son enteros
+Inicio
+    partidasH = 0
+    partidasM1 = 0
+    partidasM2 = 0
+
+Repetir
+    //Pedir chinos
+    chiH = pedirChinos()
+    //pedirChinos2(chiH)
+    chiM1 = azar(0,3)
+    chiM2 = azar(0,3)
+
+    //Pedir apuestas
+    Repetir
+        Leer apuH
+    Mientras que apuH < 0 o apuH > 9
+    Repetir
+        apuM1 = azar(0,9)
+    Mientras que apuM1 == apuH
+    Repetir
+        apuM2 = azar(0,9)
+    Mientras que apuM2 == apuH o apuM1 == apuM2
+    
+    //Comprobar qué ha pasado.
+    total = chiH + chiM1 + chiM2
+    si (total == apuH)
+        Escribir "Has ganado."
+        partidasH = partidasH + 1
+    FinSi
+    si (total == apuM1)
+        Escribir "Ha ganado la M1"
+        partidasM1 = partidasM1 + 1
+    FinSi
+    si (total == apuM2)
+        Escribir "Ha ganado la M2"
+        partidasM2 = partidasM2 + 1
+    FinSi
+    si (total != apuH y total != apuM1 y total != apuM2)
+        Escribir "Nadie gana, la suma era: ", total
+    FinSi
+Mientras que partidasH != 3 y partidasM1 != 3 y partidasM2 != 3
+
+si (partidasH == 3)
+    Escribir "El juego lo has ganado tú"
+FinSi
+Si (partidasM1 == 3)
+    Escribir "Ha ganado la M1"
+FinSi
+Si (partidasM2 == 3)
+    Escribir "Ha ganado la M2"
+FinSi
+Fin
+//----------------------------------------------------------
+entero pedirChinos()
+   ch es entero
+Inicio
+    Repetir
+        Leer ch
+    Mientras que ch < 0 o ch > 3
+    Devolver ch
+Fin
+---------------------------------
+pedirChinos2((ref) ch es entero)
+Inicio
+    Repetir
+        Leer ch
+    Mientras que ch < 0 o ch > 3
+Fin

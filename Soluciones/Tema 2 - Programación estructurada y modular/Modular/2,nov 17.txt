@@ -1,0 +1,92 @@
+real calcNumlar(num1,num2,num3,num4 son reales)
+numlar es real
+Inicio
+	
+numlar=num1
+	si(num2>10)
+	numlar=numlar^100
+	numlar=numlar+num2
+	sino
+	numlar=numlar^10
+	numlar=numlar+num2
+	Finsi
+	si(num3>10)
+	numlar=numlar^100
+	numlar=numlar+num3
+	sino
+	numlar=numlar^10
+	numlar=numlar+num3
+	Finsi
+	si(num4>10)
+	numlar=numlar^100
+	numlar=numlar+num4
+	sino
+	numlar=numlar^10
+	numlar=numlar+num4
+	Finsi
+devolver numlar
+fin
+-------------------------
+real sumNum ((ref)num1,(ref)num2,(ref)num3,(ref)num4)
+num1=num1+1
+num2=num2+1
+num3=num3+1
+num4=num4+1
+---------------------------------------
+real calcLong(numlar es reales)
+cont es real
+cont=0
+mientras (numlar>0)
+	numlar=numlar/10
+	cont=cont+1
+fin mientras
+devolver cont
+
+--------------------------------------
+Principal
+Inicio
+num1,num2,num3,num4,cont,sam,frodo son reales
+sam=0
+frodo=0
+cont=0
+escribir "Vamos a empezar el juego"
+escribir "Frodo dime un numero"
+leer num1
+escribir "Sam dime un número"
+leer num2
+escribir "Frodo dime un numero"
+leer num3
+escribir "Sam dime un número"
+leer num4
+escribir "Ya tenemos todos los numeros"
+numLar=calcNumlar(num1,num2,num3,num4)
+escribir "El número junto es: ",numlar
+	
+	mientras (cont<=10)
+	long1=calcLong(numLar)
+	sumNum(num1,num2,num3,num4)
+	numLar=calcNumlar(num1,num2,num3,num4)
+	long2=calcLong(numLar)
+		si(long1<long2)
+			si(cont mod 2=0)
+			sam=sam+1
+			sino
+			frodo=frodo+1
+			finsi
+		finsi
+	
+	Fin mientras
+escribir "El ganador es: "
+	si (frodo>sam)
+	escribir "Frodo"
+	escribir "con ",frodo," puntos"
+	finsi
+	si(sam>frodo)
+	escribir "Sam"
+	escribir "con ",sam," puntos"
+	finsi
+	si(sam==frodo)
+	escribir "pues ninguno, que han empatado"
+
+Fin
+

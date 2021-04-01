@@ -1,0 +1,28 @@
+ALGORITMO PRINCIPAL 
+	n es real
+	logico es real
+	
+INICIO
+	leer(n)
+	res=decimales(n)
+	
+	si res==true entonces
+        escribir "Tiene decimales"
+    sino
+        escribir " No tiene decimales" 
+
+FIN 
+--------------------------------------------
+logico es decimales ( real num)
+
+aux es entero 
+INICIO
+	aux=trunc(num)
+	
+	si(num==aux) entonces 
+		devolver false 
+	sino 
+		devolver true 
+	fin si 
+ 
+FIN 

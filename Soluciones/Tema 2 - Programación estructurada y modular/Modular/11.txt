@@ -1,0 +1,22 @@
+--------------------------
+real hacerFactorial (num es real)
+    f es real
+Inicio    
+  	f=1
+	Repetir
+		f = f * num
+		num=num-1
+	Mientras que num > 1
+	devolver f
+Fin 
+
+---------------------------------------
+INICIO 
+   num Es Real
+	Escribir  "Dime un numero"
+	leer num
+    
+    resultado=hacerFactorial(num)
+
+	escribir "El factorial es: ", resultado
+FIN 

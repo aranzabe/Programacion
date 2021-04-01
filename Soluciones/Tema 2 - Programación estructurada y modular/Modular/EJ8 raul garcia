@@ -1,0 +1,30 @@
+Algoritmo principal 
+	
+	a,b,c son enteros 
+INCIO 	
+    leer a 
+    leer b
+    leer c
+    
+    res=ordenados(a,b,c)
+    si res==true 
+        escribir("Estan ordenados de menor a mayor")
+    sino
+		escribir("No estan ordenados de menor a mayor")
+    fin si 
+	
+FIN 
+
+---------------------------
+logico ordenados(x int ,y int ,z int)
+    res es logico 
+INICIO
+
+    si(x<y & y<z)entonces
+        res=true
+    sino
+        res=false
+    fin si
+    
+    devolver res 
+FIN 

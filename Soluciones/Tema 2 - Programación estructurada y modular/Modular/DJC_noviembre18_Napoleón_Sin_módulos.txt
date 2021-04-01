@@ -1,0 +1,40 @@
+Algoritmo
+    Na, We son enteros
+    dadoAt1, dadoAt2, dadoDef son enteros
+    turno es carácter
+Inicio
+    Na = 50
+    We = 50
+    turno = 'N'
+
+Repetir
+    dadoAt1 = azar(1,6)
+    dadoAt2 = azar(1,6)
+    dadoDef = azar(1,6)
+
+    Si turno == 'N'
+        si (dadoAt1 > dadoDef y dadoAt2 > dadoDef)
+            We = We - 1            
+        Finsi
+        si (dadoDef >= dadoAt1 y dadoDef >= dadoAt2)
+            Na = Na - 1
+            turno = 'W'
+        FinSi
+    Sino
+        si (dadoAt1 > dadoDef y dadoAt2 > dadoDef)
+            Na = Na - 1            
+        Finsi
+        si (dadoDef >= dadoAt1 y dadoDef >= dadoAt2)
+            We = We - 1
+            turno = 'N'
+        FinSi
+    FinSi
+Mientras que (We != 0 y Na != 0)
+
+Si (We > 0)
+    Escribir "Ha ganado Wellington"
+Sino
+    Escribir "Napoleón"
+FinSi
+
+Fin

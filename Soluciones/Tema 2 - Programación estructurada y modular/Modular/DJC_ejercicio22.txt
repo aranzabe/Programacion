@@ -1,0 +1,27 @@
+cuantoParImpar(num,(ref)cont_par,(ref)cont_impar son enteros)
+
+Inicio
+    cont_par = 0
+    cont_impar = 0
+	Mientras (num > 0)
+        digito = num mod 10
+		Si (digito mod 2 == 0)
+			cont_par = cont_par + 1
+		SiNo
+			cont_impar = cont_impar + 1
+		FinSi
+		num = num div 10
+	FinMientras
+Fin
+---------------------------------------------------------------------------------------------
+Algoritmo principal
+	n,(ref)cp,(ref)ci son enteros
+	
+Inicio
+	Escribir "Este programa te dice cuántos dígitos pares e impares tiene un número entero"
+	Escribir "Introduce un número entero"
+	Leer n
+	
+	cuantoParImpar(n,(ref)cp,(ref)ci)
+	Escribir "Tu número ", n, " tiene ", cp, " dígitos pares y ", ci, " impares"
+Fin

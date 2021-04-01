@@ -1,0 +1,30 @@
+ALGORITMO PRINCIPAL 
+	n es entero
+	res es real 
+
+Inicio 
+	Escribir("Dame un numero")
+	Leer(n)
+	
+	res=calcularRaiz(n)
+    
+    si res != -9999 entonces
+        escribir res 
+    sino 
+        escribir "La raiz cuadrada de un numero negativo no es posible"
+    fin si 
+
+Fin 
+-----------------------------------------------
+real calcularRaiz(entero num) 
+    res es real 
+INICIO
+	si num>0 o num==0 entonces
+		res=raiz(num)
+	sino
+		res=-9999
+	fin si 
+	
+	devolver res 
+
+FIN 

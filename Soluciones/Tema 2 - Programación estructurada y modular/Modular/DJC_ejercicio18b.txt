@@ -1,0 +1,55 @@
+Entero calculaCambio((ref)dinero es real, valor_moneda es real)
+	num_moneda es entero
+	
+Inicio
+	num_moneda = 0
+	Mientras (dinero >= valor_moneda)
+		dinero = dinero - valor_moneda
+		num_moneda = num_moneda + 1
+	FinMientras
+	Devolver(num_moneda)
+Fin
+----------------------------------------------------------------------------------------------
+Algoritmo principal
+	din es real
+	val_mon es real
+	
+Inicio
+	Escribir "Este programa calcula la cantidad de monedas necesarias para dar el cambio"
+	Escribir "Dame una cantidad de dinero"
+	Leer din
+	
+	Si (din >= 2)
+		val_mon = 2
+		Escribir "Monedas de 2 euros: ", calculaCambio((ref)din,val_mon)
+	FinSi
+	Si (din >= 1)
+		val_mon = 1
+		Escribir "Monedas de 1 euro: ", calculaCambio((ref)din,val_mon)
+	FinSi
+	Si (din >= 0.50)
+		val_mon = 0.50
+		Escribir "Monedas de 50 céntimos: ", calculaCambio((ref)din,val_mon)
+	FinSi
+	Si (din >= 0.20)
+		val_mon = 0.20
+		Escribir "Monedas de 20 céntimos: ", calculaCambio((ref)din,val_mon)
+	FinSi
+	Si (din >= 0.10)
+		val_mon = 0.10
+		Escribir "Monedas de 10 céntimos: ", calculaCambio((ref)din,val_mon)
+	FinSi
+	Si (din >= 0.05)
+		val_mon = 0.05
+		Escribir "Monedas de 5 céntimos: ", calculaCambio((ref)din,val_mon)
+	FinSi
+	Si (din >= 0.02)
+		val_mon = 0.02
+		Escribir "Monedas de 2 céntimos: ", calculaCambio((ref)din,val_mon)
+	FinSi
+	Si (din >= 0.01
+		val_mon = 0.01
+		Escribir "Monedas de 1 céntimo: ", calculaCambio((ref)din,val_mon)
+	FinSi
+Fin
+	

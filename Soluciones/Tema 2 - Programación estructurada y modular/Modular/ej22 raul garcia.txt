@@ -1,0 +1,33 @@
+22º Realiza un módulo que me devuelva cuantos dígitos pares y cuantos impares
+tiene un número. Ejemplo: 234656, devolvería: 4 dígitos pares y 2 impares. 
+
+
+DECLARACION 
+
+par,impar,n son enteros 
+
+INCIO
+	leer n 
+	par=digitos(impar,n)
+
+	escribir ("Los pares son " + par + " y los impares son " + impar 
+
+
+FIN 
+-----------------------
+int digitos (int im (ref), int num)
+int p
+Inicio
+	mientras num>0 hacer
+		si num mod 10==0 entonces
+			p++
+		sino
+			im++
+		fin si 
+
+		
+		num=num div 10 
+		devolver p
+	fin mientras
+
+FIN

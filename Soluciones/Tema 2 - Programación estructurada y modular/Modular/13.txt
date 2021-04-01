@@ -1,0 +1,31 @@
+--------------------------
+real calcPrimo (num es real)
+cont es real
+cond es logico
+Inicio 
+cond=verdadero 
+  	cont=1
+	
+	mientras cont<num
+		cont=cont+1
+		si (num mod cont!=0)
+			cond=falso
+		FinSi
+	FinMientras
+	devolver cond
+Fin 
+
+---------------------------------------
+INICIO 
+   num Es Real
+	Escribir  "Dime un numero"
+	leer num
+    
+    resultado=calcPrimo(num)
+
+	si (resultado==Verdadero)
+	escribir "Es primo"
+	sino
+	escribir "no es primo"
+
+FIN 

@@ -1,0 +1,125 @@
+Algoritmo Oveja
+    puntosH, puntosM1, puntosM2 son enteros
+    numCartaH, numCartaM1, numCartaM2, numCartaC son enteros
+    paloCartaH, paloCartaM1, paloCartaM2, paloCartaC son cadenas
+    turno es cadena
+    respuesta es carácter
+Inicio
+    puntosH = 0
+    puntosM1 = 0
+    puntosM2 = 0 
+    turno = "Humano"
+    cogida = falso
+    Repetir
+        //repartir cartas
+        
+        sacarCarta(numCartaH, paloCartaH)
+        Escribir "El humano tiene el ", numCartaH, " de ", paloCartaH
+        numCartaM1 = sacarCarta2(paloCartaM1)
+        Escribir "La M1 tiene el ", numCartaM1, " de ", paloCartaM1
+        sacarCarta(numCartaM2, paloCartaM2) 
+        Escribir "La M2 tiene el ", numCartaM2, " de ", paloCartaM2
+
+        //sacar carta común
+        numCartaC = sacarCarta2(paloCartaC)
+        Escribir "La carta común es el ", numCartaC, " de ", paloCartaC
+
+        //comprobar por turnos
+        si (turno == "Humano")
+            Si (numCartaH == numCartaC)
+                Escribir "Te la quedas?"
+                Leer respuesta
+                si (respuesta == 's' o respuesta == 'S')
+                    puntosH = puntosH + numCartaC
+                    sacarCarta(numCartaH, paloCartaH)
+                    Escribir "El humano tiene el ", numCartaH, " de ", paloCartaH
+                    //sacar carta común
+                    numCartaC = sacarCarta2(paloCartaC)
+                    Escribir "La carta común es el ", numCartaC, " de ", paloCartaC
+                FinSi
+            FinSi
+            turno = "M1"
+        Finsi
+        si (turno == "M1")
+            Si (numCartaM1 == numCartaC)
+                aleat = azar(1,2)
+                si (aleat == 1)
+                    puntosM1 = puntosM1 + numCartaC
+                    sacarCarta(numCartaM1, paloCartaM1)
+                    Escribir "La M1 tien ", numCartaM1, " de ", paloCartaM1
+                    //sacar carta común
+                    numCartaC = sacarCarta2(paloCartaC)
+                    Escribir "La carta común es el ", numCartaC, " de ", paloCartaC
+                FinSi
+            FinSi
+            turno = "M2"
+        Finsi
+        si (turno == "M2")
+            Si (numCartaM2 == numCartaC)
+                aleat = azar(1,100)
+                si (aleat <= 60 + numCartaC)
+                    puntosM2 = puntosM2 + numCartaC
+                    sacarCarta(numCartaM2, paloCartaM2)
+                    Escribir "La M2 tien ", numCartaM2, " de ", paloCartaM2
+                    //sacar carta común
+                    numCartaC = sacarCarta2(paloCartaC)
+                    Escribir "La carta común es el ", numCartaC, " de ", paloCartaC
+                FinSi
+            FinSi
+            turno = "Humano"
+        Finsi
+    Mientras que puntosH < 100 y puntosM1 < 100 y puntosM2 < 100
+
+    Si (puntosH >=100)
+        Escribir "Gana el humano"
+    FinSi
+    Si (puntosM1 >=100)
+        Escribir "Gana la M1"
+    FinSi
+    Si (puntosM2 >=100)
+        Escribir "Gana la M2"
+    FinSi
+Fin
+
+//----------------------------------------------------
+sacarCarta((ref) num, (ref) palo)
+    alea es entero
+Inicio
+    num = azar(1,10)
+    si (num > 7)
+        num = num + 2
+    Finsi
+    alea = azar(1,4)
+    según alea
+        caso 1: palo = "Oros"
+        caso 2: palo = "Copas"
+        caso 3: palo = "Espadas"
+        caso 4: palo = "Bastos"
+    finSegún
+Fin
+
+//----------------------------------------
+entero sacarCarta2((ref) palo)
+    alea es entero
+    num es entero
+Inicio
+    num = azar(1,10)
+    si (num > 7)
+        num = num + 2
+    Finsi
+    alea = azar(1,4)
+    según alea
+        caso 1: palo = "Oros"
+        caso 2: palo = "Copas"
+        caso 3: palo = "Espadas"
+        caso 4: palo = "Bastos"
+    finSegún
+    devolver num
+Fin
+
+
+
+
+
+
+

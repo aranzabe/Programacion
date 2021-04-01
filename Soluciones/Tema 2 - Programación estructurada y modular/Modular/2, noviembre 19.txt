@@ -1,0 +1,85 @@
+--------------------------
+genePosiciones((ref)pos1,(ref)pos2,(ref)pos3)
+Inicio   
+pos1=azar(0,9)
+pos2=azar(0,9)
+pos3=azar(0,9)
+Fin 
+---------------------------------------------------
+compos (pos1,pos2,pos3,h1,h2,h3 son enteros,(ref)resp1,(ref)resp2,(ref)resp3 son carácter)
+
+Inicio
+si(pos1==h1)
+    resp1='V'
+sino
+	si(h1==pos2 o h1==pos3)
+	    resp1='A'
+	sino
+	    resp1='R'
+    finsi
+finsi
+
+si(pos2==h2)
+    resp2='V'
+sino
+	si(h2==pos3 o h2==pos1)
+	    resp2='A'
+	sino
+	    resp2='R'
+    finsi
+finsi
+
+si(pos3==h3)
+    resp3='V'   
+sino
+	si(h3==pos2 o h3==pos1)
+	    resp3='A'
+	sino
+	    resp3='R'
+    finsi
+finsi
+
+Fin
+
+
+
+---------------------------------------
+INICIO 
+
+pos1,pos2,pos3,h1,h2,h3 son reales
+resp1,resp2,resp3 son caracter
+cont es real
+acertado es logico
+
+Inicio
+Escribir "Vamos a jugar al MasterMind"
+cont=0
+acertado=falso
+
+genePosiciones(pos1,pos2,pos3)
+
+repetir
+	cont=cont+1
+	escribir "Dime tus numeros!"
+	leer h1
+	leer h2
+	leer h3
+	escribir "Tus intentos son "
+	escribir h1,h2,h3
+	compPos(pos1,pos2,pos3,h1,h2,h3,resp1,resp2,resp3)
+	escribir "Las pistas son"
+	escribir resp1,resp2,resp3
+	si (resp1=='V' y resp2=='V' y resp3=='V')
+		acertado=Verdadero
+	finsi
+mientras que que (acertado==Falso y cont!=5)
+
+si (acertado==Verdadero)
+	escribir "Has ganado en", cont, " intentos"
+sino
+	escribir "Has perdido"
+	escribir "La combinación era"
+	escribir pos1,",",pos2,",",pos3
+Finsi
+
+FIN 

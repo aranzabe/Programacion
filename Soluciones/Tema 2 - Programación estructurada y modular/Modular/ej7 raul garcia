@@ -1,0 +1,40 @@
+DECLARACION  
+	op es caracter
+	far,cen,c,f son reales
+INCIO
+
+	escribir("Que quieres convertir= f/c") 
+	leer op
+
+	si op='f' entonces
+		leer(c)
+		far=calcularFar(c)
+		escribir("La conversion de fahrenheit es " + far)
+	si no 
+		si op='c' entonces
+			leer(f)	
+			cen=calcularFar(f) 
+			escribir ("La conversion de centigrados es " +cen) 
+		sino
+			escribir("respuesta erronea")
+		fin si 
+	fin si 
+
+
+FIN 
+
+res calcularFar(res cen)
+    res real 
+Inicio 
+
+    res =9/5*c+32
+    devolver res 
+Fin 
+
+res calcularCen(res far)
+    res real 
+Inicio 
+
+    res=((far-32)*5)/9
+    devolver res 
+Fin 

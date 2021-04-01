@@ -1,0 +1,35 @@
+15º Dados dos números enteros, realizar el algoritmo que calcule el cociente y el
+resto mediante restas sucesivas. Modularmente.
+Ejemplo: 18 : 4
+Se irá restando 18 – 4 = 14; 14 – 4 = 10; 10 – 4 = 6; 6 – 4 = 2
+hasta que el resultado de la resta (2) es menor que el divisor (4). Por lo tanto el
+cociente es el número de restas que se han hecho (4) y el resto es el valor de la última
+resta (2).
+
+
+DECLARACION
+	numero, cociente,coc son enteros;
+	
+INICIO
+	
+	leer numero;
+	leer cociente;
+	
+	res=calcular(numero,cociente,coc)
+	escribrir res 					//resto de la operacion
+	escribir coc				    //cociente de al operacion 
+	
+FIN
+-----------------------------------
+
+entero calcular(n, c, (ref) coci son entero)
+INICIO
+		coci=0
+
+		mientras(n>=c)
+			n=n-c; 
+			coci++;
+		fin mientras
+
+		devolver n 
+FIN 

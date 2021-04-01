@@ -1,0 +1,31 @@
+Real calculaArea(ladoA, ladoB son reales)
+    area es real
+    
+Inicio
+    area = ladoA * ladoB
+    Devolver (area)
+Fin
+-----------------------------------------------------
+Real calculaPerimetro(ladoA, ladoB son reales)
+    perimetro es real
+    
+Inicio
+    perimetro = 2 * ladoA + 2 * ladoB
+    Devolver (perimetro)
+Fin
+-----------------------------------------------------
+Algoritmo principal
+    a, b, ar, per son reales
+    
+Inicio
+    Escribir "Este programa calcula el área y el perímetro de un rectángulo"
+    Escribir "Introduce la longitud de la altura"
+    Leer a
+    Escribir "Introduce la longitud de la base"
+    Leer b
+    
+    ar = calculaArea(a,b)
+    Escribir "El área es: ", ar
+    per = calculaPerimetro(a,b)
+    Escribir "El perímetro es: ", per
+Fin

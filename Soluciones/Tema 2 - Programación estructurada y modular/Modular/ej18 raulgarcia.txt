@@ -1,0 +1,65 @@
+Escribe un programa que simule el mecanismo de devolución de monedas de una
+máquina expendedora. El programa preguntará una cantidad de dinero y calculará la
+cantidad de monedas necesarias para dar esa cantidad. Por ejemplo, 3,47 € serían 1
+moneda de 2€, 1 de 1€, 2 de 20cts, 1 de 5cts y 1 de 2 cts.
+
+DECLARACION
+
+real dinero m2,m1,50cts,20cts,10cts,5cts,2cts,1cts 
+
+INICIO
+	leer dinero
+	
+	maquina(dinero,m2,m1,50cts,20cts,10cts,5cts,2cts,1cts)
+	escribir("moneda2: " +m2 + ",moneda1: "+ m1+ ",moneda 50centimos "+50cts + ", moneda 20 centimos " + 20 cts + 
+			",moneda 10centimos " +  10 cts + ",moneda 5 centimos " +  5 cts + ",moneda 2 centimos " +2cts+ ",moneda 1 centimo " 
+			+ 1cts)
+
+
+FIN
+---------------------------------------------------
+maquina(din,(ref)mo2,(ref)mo1,(ref)50cent,(ref)20cent,(ref)10cent,(ref)5cent,(ref)2cent,(ref)1 cent son reales)
+
+Inicio
+	mientras (din>=2) entonces
+		m2++
+		din-=2
+	fin mientras 
+	
+	mientras (din>=1) entonces
+		m1++
+		din--
+	fin mientras 
+
+	mientras (din>=0.50) entonces
+		50cent++
+		din-=0.50
+	fin mientras 
+
+	mientras (din>=0.20) entonces
+		20cent++
+		din-=0.20
+	fin mientras 
+
+	mientras (din>=0.10) entonces
+		10cent++
+		din-=0.10
+	fin mientras 
+	
+	mientras (din>=0.05) entonces
+		5cent++
+		din-=0.05
+	fin mientras 
+
+	mientras (din>=0.02) entonces
+		2cent++
+		din-=0.02
+	fin mientras 
+	
+	mientras (din>=0.01) entonces
+		1cent++
+		din-=0.01
+	fin mientras 
+
+Fin
+		

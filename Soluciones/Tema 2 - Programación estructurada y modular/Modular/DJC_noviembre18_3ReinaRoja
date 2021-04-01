@@ -1,0 +1,73 @@
+entero calculaHumanosTot()
+    humSala, humTot son enteros
+    sala es entero
+
+Inicio
+    sala = 1
+    Repetir
+        humSala = Detectar('h',sala)
+        humTot = humSala + humTot
+        sala = sala + 1
+    MientrasQue (sala < 10)
+    Devolver(humTot)
+Fin
+
+lógico quedanHumano()
+    quedan es lógico
+Inicio
+    sala = 1
+    quedan = falso
+    Repetir
+        humSala = Detectar('h',sala)
+        si (humSala > 0)
+            quedan = verdadero
+        FinSi
+        sala = sala + 1
+    MientrasQue (sala < 10 y quedan==falso)
+    Devolver(quedan)
+Fin
+ -------------------------------------------------------
+ Algoritmo principal
+    sala es entero
+    tipo es carácter
+    dens1, dens2 son reales
+    nHumanos, nZombis son enteros
+    quedanHumanos es lógico
+Inicio
+    sala = 1
+    Repetir
+        nHumanos = Detectar('h',sala)
+        nZombis = Detectar('z',sala)
+        
+        Si (nHumanos == 0)
+            Si (Puertas_Abiertas(sala) == Falso)
+                Abrir_Puertas(sala)
+            FinSi
+        SiNo
+            Cerrar_Puertas(sala)
+
+            Densidad_virus(sala, densOriginal)
+            Repetir
+                Densidad_Virus(sala,dens1)
+                Aumentar_Virus(sala)
+            Mientras dens1 < 20
+
+            Mientras (nHumanos > 0)
+                nHumanos = Detectar('h',sala)
+            FinMientras
+
+            Repetir
+                Densidad_Virus(sala,dens2)
+                Disminuir_Virus(sala)
+            Mientras (dens2 > densOriginal)
+
+            Abrir_Puertas(sala)
+        FinSi
+
+        sala = sala + 1
+        Si (sala = 10)
+            sala = 1
+        FinSi
+    quedanHumanos = calculaHumanosTot()
+    MientrasQue (quedanHumanos == verdadero)
+Fin

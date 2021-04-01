@@ -1,0 +1,37 @@
+ALGORITMO PRINCIPAL
+	int num 
+INICIO
+	leer num
+	
+	si(es_perfecto(num)==true)entonces
+		escribir "Es perfecto"
+	sino 
+		escribir "No es perfecto"
+	fin si 
+
+FIN 
+
+logico es_perfecto(int n)
+Declaracion
+	sum, aux,op,res, entero
+	es_o_no logico 
+Inicio
+	sum=0
+	aux=n																	
+	repetir
+		res= aux mod n	
+		si (res==0)entonces
+			op=aux div n 
+			sum=sum+op 
+		fin si												
+		n--
+	hasta que (n<0)
+	si sum==aux entonces
+		es_o_no=true
+	sino	
+		es_o_no=false
+	fin si 
+	
+	devolver es_o_no
+
+FiN

@@ -1,0 +1,23 @@
+algoritmo principal
+superficie , perimetro son reales
+resultado es real
+inicio
+escribir "dame la superficie"
+escribir superficie
+escribir"dame el perimetro"
+escribir perimetro
+escribir resultado
+fin
+-------
+real calcularsuperficie
+inicio
+superficie= a*b
+devolver (superficie)
+fin
+-----
+real calcularperimetro
+inicio
+perimetro = 2*a+2*b
+devolver (perimetro)
+fin
+-----

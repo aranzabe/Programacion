@@ -1,0 +1,39 @@
+Real calculaTemp(conversion es caracter, temp_lectura es real)
+	temp_salida es real
+
+Inicio
+	Si conversion = 'F' o conversion = 'f'
+		temp_salida = (9 * temp_lectura / 5) + 32
+	FinSi
+	Si conversion = 'C' o conversion = 'c'
+		temp_salida = (temp_lectura - 32) * 5 / 9
+	FinSi
+	
+	Devolver (temp_salida)
+Fin
+---------------------------------------------------------------------------------------------------
+Algoritmo principal
+	conv es carácter
+	temp1, temp2 son reales
+	correcto es lógico
+
+Inicio
+	Escribir "Este programa es un conversor entre grados Celsius y Farenheit"
+	
+	Repetir
+		Escribir "¿A qué unidades quieres convertir la temperatura? F: Farenheit, C: Celsius"
+		Leer conv
+		Escribir "¿Cuál es la temperatura?"
+		Leer temp1
+		
+		Si conv != 'C' y conv != 'c' y conv != 'F' y conv != 'f'
+			correcto = Falso
+			Escribir "Por favor, introduce una unidad correcta"
+		SiNo
+			correcto = Verdadero
+		FinSi
+	MientrasQue correcto = Falso
+	
+	temp2 = calculaTemp (conv, temp1)
+	Escribir "La temperatura es: ", temp2, " º", conv
+Fin

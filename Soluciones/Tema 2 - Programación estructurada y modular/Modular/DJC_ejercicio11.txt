@@ -1,0 +1,25 @@
+Entero calculaFactorial(num es entero)
+    factorial es entero
+    cont es entero
+
+Inicio
+    cont = 1
+    factorial = num
+    Repetir
+        factorial = factorial * cont
+        cont = cont + 1
+    MientrasQue num > cont
+    
+    Devolver(factorial)
+Fin
+--------------------------------------------------------------
+Algoritmo principal
+    n es entero
+    
+Inicio
+    Escribir "Este programa calcula el factorial de un número"
+    Escribir "¿De qué número quieres calcular el factorial?"
+    Leer n
+    
+    Escribir n, "! = ", calculaFactorial(n)
+Fin

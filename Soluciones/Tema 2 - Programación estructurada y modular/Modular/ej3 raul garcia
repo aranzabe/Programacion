@@ -1,0 +1,29 @@
+ALGORITMO PRINCIPAL
+    n es entero 
+    res es cadena
+INICIO
+
+	leer(n)
+	
+    res=Espositivo(n)
+    
+    escribir res 
+
+FIN 
+
+--------------------------
+
+Cadena Espositivo ( entero num)
+
+res es cadena 
+
+INICIO
+	si(n>0 o n==0) entonces
+		res= "es positivo"
+	sino	
+		res= "es negativo"
+	fin si 
+    
+    devolver res 
+
+FIN

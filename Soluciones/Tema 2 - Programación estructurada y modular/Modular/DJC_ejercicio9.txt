@@ -1,0 +1,18 @@
+Entero cuantasCifras(n es entero)
+	cont es entero
+Inicio
+	Repetir
+		n = n / 10
+		cont = cont + 1
+	MientrasQue n >= 1
+	Devolver(cont)
+-----------------------------------------------------------------------------
+Algoritmo principal
+num es entero
+
+Inicio
+	Escribir "Este programa te dice cuántas cifras tiene un número entero"
+	Escribir "Introduce un número entero"
+	Leer num
+	Escribir "El número tiene ", cuantasCifras(num), " cifras"
+Fin

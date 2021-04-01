@@ -1,0 +1,94 @@
+Algoritmo principal
+    sala es entero
+    peligro es entero
+    energía es entero
+    flechas es entero
+    ponerse_anillo es entero
+    anillo_puesto es lógico
+    victoria, vivos son lógicos
+    prob es entero
+    salaPerdida, salaGanada son enteros
+    
+Inicio
+    sala = 1
+    salaPerdida = 0
+    salaGanada = 0
+    Repetir
+        peligro = azar(0,3)
+        Segun (peligro)
+            0:
+                energía = azar(1,10)
+                Recargar_vara((ref)energía)
+                Si (Poder_de_la_vara() > Poder_de_la_sala(sala))
+                    victoria = Verdadero
+                FinSi
+                Si (Poder_de_la_vara() == Poder_de_la_sala(sala))
+                    prob = azar(1,100)
+                    Si (prob <= 60)
+                        victoria = Verdadero
+                    SiNo
+                        victoria = Falso
+                    FinSi
+                FinSi
+                Si (Poder_de_la_vara() < Poder_de_la_sala(sala)
+                    prob = azar (1,100)
+                    Si (prob <= 30)
+                        victoria = Verdadero
+                    SiNo
+                        victoria = Falso
+                    FinSi
+                FinSi
+            1:
+                flechas = Cuantas_flechas_quedan()
+                Mientras (Quedan_enemigos(sala) == Verdadero y flechas > 0)
+                    Lanzar_flechas((ref)flechas)
+                FinMientras
+                Si (Quedan_enemigos(sala) == Falso)
+                    victoria = Verdadero
+                    flechas = Cuantas_flechas_quedan() + FlechasEncontradas(sala)
+                    Recargar_carcaj((ref)flechas)
+                SiNo
+                    victoria = Falso
+                FinSi
+            2:
+                ponerse_anillo = azar(0,1)
+                Si (ponerse_anillo == 1)
+                    Ponerse_anillo((ref)anillo_puesto)
+                    prob = azar(1,100)
+                    Si (prob <= 90)
+                        victoria = Verdadero
+                    SiNo
+                        victoria = Falso
+                    FinSi
+                    Quitarse_anillo((ref)anillo_puesto)
+                SiNo
+                    prob = azar(1,100)
+                    Si (prob <= 20)
+                        victoria = Verdadero
+                    SiNo
+                        victoria = Falso
+                    FinSi
+                FinSi
+            3:
+                victoria = Verdadero
+            FinSegun
+        Si (victoria == Falso)
+            prob = azar(1,100)
+            salaPerdida = salaPerdida + 1
+            Si (prob <= 80)
+                vivos = Verdadero
+            SiNo
+                vivos = Falso
+            FinSi
+        SiNo
+            vivos = Verdadero
+            salaGanada = salaGanada + 1
+        FinSi
+        sala = sala + 1
+    MientrasQue (sala <= 36 y vivos == Verdadero)
+    Si (vivos == Falso)
+        Escribir "Nuestros héroes han perecido frente a los peligros de Moria"
+    SiNo
+        Escribir "Nuestros héroes han atravesado Moria, superando ", salaGanada, " salas y habiendo tenido que huir de ", salaPerdida, " salas."
+    FinSi
+Fin

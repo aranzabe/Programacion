@@ -1,0 +1,46 @@
+algoritmo para diseñar el estado de 9 salas
+
+
+DECLARACION
+    int sala, densid,cuantos 
+    tipo caracter 
+
+INICIO
+        sala=1
+    repetir
+            densid=0
+        
+            tipo='h'
+        
+            cuantos=detectar(tipo,sala)
+            
+            si(cuantos>0)entonces
+                cerrar_puertas(sala)
+                mientras(cuantos>0)
+
+                    si densid<20 entonces
+                        densidad_virus(sala,(ref)densid
+                        aunentar_virus(sala)
+                    fin si 
+                    cuantos=detectar(tipo,sala)
+                    
+                    si cuantos==0 entonces
+                        
+                        
+                        mientras densid>0 entonces
+                            disminuir_virus(sala)
+                        
+                        fin mientras 
+                        abrir_puertas(sala)
+                    fin si 
+                fin mientras
+            sino
+                puertas_abiertas(sala)
+            fin si 
+            
+            sala++
+    mientras que (sala<10)
+        
+
+FIN
+------------------------

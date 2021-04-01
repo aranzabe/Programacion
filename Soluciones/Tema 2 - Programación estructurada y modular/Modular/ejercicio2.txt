@@ -1,0 +1,32 @@
+algoritmo principal
+
+area, circumferencia, radio es real
+resultado es real
+
+inicio
+escribir "dame el area"
+escribir area
+escribir"dame el perimetro"
+escribir perimetro
+escribir "dame el radio"
+escribir radio
+escribir resultado
+fin
+-------
+real calculararea
+inicio
+area= raiz(area/pí)
+devolver (area)
+fin
+-----
+real
+inicio
+perimetro=2*pí*radio
+devolver (perimetro)
+fin
+-----
+real calcularradio
+inicio
+radio=perimetro/2*pí
+devolver (perimetro)
+fin

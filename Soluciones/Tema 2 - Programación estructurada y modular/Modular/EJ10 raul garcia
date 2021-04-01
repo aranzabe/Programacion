@@ -1,0 +1,41 @@
+ALGORITMO PRINCIPAL
+
+	turno Es Caracter
+	dia Es Caracter
+	tar es real
+	
+	
+	Escribir "Escribir turno diurno = D y nocturno = N"
+	leer turno
+	Escribir "Dime de lunes a domingo : L, M . X, J , V , S, D"
+	leer dia 
+	
+    tar=sueldo(d,t)
+	Escribir tar	
+
+FinAlgoritmo
+---------------------------------
+real sueldo( caracter dia , caracter turno)
+tarifa es real 
+
+Inicio 
+	si (turno='D' )y (dia !='D')
+		tarifa=20*8
+	SiNo
+		si(turno='N') y (dia !='D')
+			tarifa=35*8
+		SiNo
+			si(turno='D' )y (dia == 'D') 
+				tarifa=30*8
+			sino 
+				si(turno='N') y (dia == 'D') 
+					tarifa =50*8
+				SiNo
+					tarifa=-9999
+                fin si
+			FinSi
+		fin si 
+	FinSi
+	
+	devolver tarifa
+Fin

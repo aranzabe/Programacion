@@ -1,0 +1,27 @@
+Entero calculaDecimal(num es entero)
+	digito es entero
+	suma es entero
+    cont es entero
+Inicio
+	suma = 0
+    cont = 0
+	Mientras (num > 0)
+		digito = num mod 10
+		suma = suma + digito * 2^cont
+		num = num div 10
+        cont = cont + 1
+	FinMientras
+	Devolver(suma)
+Fin
+------------------------------------------------------------
+Algoritmo principal
+	nDecimal, nBinario son enteros
+	
+Inicio
+	Escribir "Este programa suma los dígitos de un número"
+	Escribir "Dame un número entero"
+	Leer nBinario
+	
+	nDecimal = calculaDecimal(nBinario)
+	Escribir "El decimal de ", nBinario, " es ", nDecimal
+Fin

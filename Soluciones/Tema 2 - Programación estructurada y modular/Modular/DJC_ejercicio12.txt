@@ -1,0 +1,28 @@
+Entero calculaFactorial(num es entero)
+    factorial es entero
+    cont es entero
+
+Inicio
+    cont = 1
+    factorial = num
+    Repetir
+        factorial = factorial * cont
+        cont = cont + 1
+    MientrasQue num > cont
+    
+    Devolver(factorial)
+Fin
+---------------------------------------------------------------
+Algoritmo principal
+    n, k, comb son enteros
+    
+Inicio
+    Escribir "Este programa calcula un número combinatorio"
+    Escribir "Introduce el primer número"
+    Leer n
+    Escribir "Introuce el segundo número"
+    Leer k
+    
+    comb = calculaFactorial(n) / (calculaFactorial(k) * (calculaFactorial(n - k)))
+    Escribir "La combinatoria de ", n, " y ", x, " es: ", comb
+Fin

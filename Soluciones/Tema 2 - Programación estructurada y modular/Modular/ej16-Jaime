@@ -1,0 +1,23 @@
+Algoritmo principal
+    hor es Entero 
+    min es Entero
+    seg es Entero
+Inicio
+    Leer hor 
+    Leer min
+    Leer seg
+    calcuraHora(hor,min,seg)
+    Escribir h ":" m ":" s
+Fin
+--------------------------------------------
+calculaHora((ref)h , (ref)m , (ref)s es Entero)
+
+Inicio
+    s = s + 1
+    si (s == 60)
+        s = 0
+        m = m +1
+    FinSi
+Si (..... ver otros ejercicios
+    
+Fin

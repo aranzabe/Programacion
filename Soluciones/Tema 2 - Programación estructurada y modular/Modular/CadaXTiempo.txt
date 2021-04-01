@@ -1,0 +1,17 @@
+Algoritmo CadaXSegundos
+    tiempo es entero
+Inicio
+    tiempo = 1
+    //Durante 5 minutos
+    Mientras (tiempo <= 300)
+        //Cada 3 segundos
+        si (tiempo mod 3 == 0)
+            //Esto se hace cada 3 segundos
+        FinSi
+        Si (tiempo mod 5 == 0)
+            //Esto cada 5 segundos
+        FinSi
+
+        espera(1)
+        tiempo = tiempo + 1
+    FinMientras

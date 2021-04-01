@@ -1,0 +1,41 @@
+Algoritmo principal
+	fila, columna, cantidad, posición son enteros
+	fin es lógico
+
+Inicio
+	fila = 1
+	columna = 1
+	fin = Falso
+	Repetir
+		Recibir_pedido((ref)cantidad)
+		posición = 1
+		Mientras (cantidad > 0 y Detectar_caja(fila,columna) == Verdadero)
+			Coger(fila,columna)
+			Apilar(posición)
+			cantidad = cantidad - 1
+			posición = posición + 1
+			columna = columna + 1
+			Si (columna > 15)
+				columna = 1
+				fila = fila + 1
+				Si (fila > 10)
+					fin = Verdadero
+				FinSi
+			FinSi
+		FinMientras
+		Posicion_Inicial()
+	Mientras Que (Detectar_caja(fila,columna) == Verdadero y fin == Falso)
+	
+	Escribir "El brazo está inoperativo"
+	Si (Detectar_caja == Falso)
+		Escribir "Error 404: caja no encontrada"
+	FinSi
+	Si (fin == Verdadero)
+		Escribir "Hemos agotado todas las existencias en el almacén"
+	FinSi
+	Si (cantidad > 0)
+		Escribir "El último pedido no se pudo finalizar"
+	SiNo
+		Escribir "El último pedido se pudo finalizar"
+	FinSi
+Fin

@@ -1,0 +1,26 @@
+Lógico calculaPositivo(num es real)
+    positivo es lógico
+    
+Inicio
+    Si (num > 0)
+        positivo = Verdadero
+        Devolver (positivo)
+    FinSi
+Fin
+------------------------------------------------------------
+Algoritmo principal
+    n es real
+    posit es lógico
+
+Inicio
+    Escribir "Este programa te dice si un número es positivo o negativo"
+    Escribir "Introduce un número distinto de 0"
+    Leer n
+    
+    posit = calculaPositivo(n)
+    Si posit = Verdadero
+        Escribir n, " es positivo"
+    SiNo
+        Escribir n, " es negativo"
+    FinSi
+Fin 

@@ -1,0 +1,29 @@
+EJER6) 
+ALGORITMO PRINCIPAL 
+    numero es real 
+    decimal es logico
+Inicio
+    Escribir "vamos a saber si un numero tiene decimales o no"
+    Escribir "Dame un numero"
+    Leer numero
+
+    Si (esDecimal(numero) == Verdadero)
+        Escribir "El numero tiene decimales"
+    SiNo 
+        Escribir "El numero no tiene decimales"
+    FinSi 
+Fin 
+---------------------------
+Lógico esDecimal (numero es real)
+       Decimal es lógico 
+       numEntero es entero
+Inicio 
+    numEntero = truncar(numero)
+    Si (numEntero != numero) entonces
+	    Decimal = Verdadero
+    SiNo
+	    Decimal = Falso
+    FinSi
+Devolver (Decimal)
+Fin
+

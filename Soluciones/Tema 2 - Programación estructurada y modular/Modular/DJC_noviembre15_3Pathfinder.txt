@@ -1,0 +1,79 @@
+real recogeMuestra((ref)tipo)
+    cantidad es real
+    nTipo es entero
+    
+Inicio
+    nTipo = azar(0,2)
+    Si (nTipo == 0)
+        tipo = 'r'
+    FinSi
+    Si (nTipo == 1)
+        tipo = 't'
+    FinSi
+    Si (nTipo == 2)
+        tipo = 'o'
+    FinSi
+    cantidad = azar(5,10)
+    Devolver(cantidad)
+Fin 
+-------------------------------------------------------------
+entero cuantosImpares(num es entero)
+    dig es entero
+    impares es entero
+
+Inicio
+    impares = 0
+    Repetir
+        dig = num mod 10
+        Si (dig mod 2 == 1)
+            impares = impares + 1
+        FinSi
+        num = num div 10
+    MientrasQue (num != 0)
+    Devolver(impares)
+Fin
+-------------------------------------------------------------
+Algoritmo principal
+    t es entero
+    nDir es entero
+    dirección es carácter
+    tipoMuestra es carácter
+    cantMuestra es real
+    numAzar,numero son enteros
+    check es lógico
+    
+Inicio
+    t = 1
+    Repetir
+        //Obstáculo cada minuto.
+        Si (t mod 60 == 0)
+            nDir = azar(0,1)
+            Si (nDir == 0)
+                dirección = 'd'
+            SiNo
+                dirección = 'i'
+            FinSi
+            gira(dirección)
+        FinSi
+
+        //Muestra  cada 10 segundos
+        Si (t mod 10 == 0)
+            cantMuestra = recogeMuestra((ref)tipoMuestra)
+            Escribir "Encontrado: ", tipoMuestra, cantMuestra
+        FinSi
+
+        //Chequeo cada 20 segundos
+        Si (t mod 20 == 0)
+            numAzar = azar(1000,9999)
+            número = cuantosImpares(numAzar)
+            check = enviar(número)
+        FinSi
+        espera(1)
+        t = t + 1
+    MientrasQue (t <= 3600 y check == Verdadero)
+    Si (check == Verdadero)
+        Escribir "Misión acabada sin problemas"
+    Sino
+        Escribir "Misión abortada"
+    FinSi
+Fin 

@@ -1,0 +1,40 @@
+Algoritmo principal
+num1, num2, cociente, resto es entero
+Inicio 
+	Escribir "Dame el dividendo"
+	Leer num1
+
+	Escribir "Dame el divisor"
+	Leer num2
+
+	cociente = calculaCociente(num1, num2)
+	Escribir cociente
+	resto = calculaResto(num1, num2)
+	Escribir resto
+Fin
+
+------------------------------------
+
+Entero calculaCociente(n1 es entero, n2 es entero)
+	cont es entero
+Inicio
+	repetir
+		n1=n1-n2
+		cont=cont+1
+	
+	mientras que n1<=n2
+	
+	Devolver (cont)
+Fin
+--------------------------------------------------------
+Entero calculaResto(n1 es entero, n2 es entero)
+	cont es entero
+Inicio
+	repetir
+		n1=n1-n2
+		cont=cont+1
+	
+	mientras que n1<=n2
+	
+	Devolver (n1)
+Fin

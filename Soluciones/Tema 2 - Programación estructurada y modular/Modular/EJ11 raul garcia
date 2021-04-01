@@ -1,0 +1,25 @@
+Algoritmo principal 
+n,aux,total son enteros
+Inicio 
+
+    leer n
+    aux=n-1
+    total=n
+    res=calcularFactorial(aux, total) 
+    Escribir res 
+
+Fin
+------------------------------------
+
+entero calcularFactorial(int auxx, int tot) 
+
+    Mientras auxx>0
+        
+        tot=tot*auxx
+        auxx=auxx-1
+        
+    FinMientras
+
+    devolver tot
+
+Escribir total

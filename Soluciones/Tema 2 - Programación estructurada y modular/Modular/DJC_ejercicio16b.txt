@@ -1,0 +1,46 @@
+Lógico queHoraEs((ref)hora,(ref)minuto,(ref)segundo)
+    correcto es lógico
+    
+Inicio
+    Si (hora > 23 o hora < 0 o minuto > 59 o minuto < 0 o segundo > 59 o segundo < 0)
+        correcto = Falso
+    SiNo
+        correcto = Verdadero
+        segundo = segundo + 1
+        Si (segundo == 60)
+            segundo = 00
+            minuto = minuto + 1
+        FinSi
+        Si (minuto == 60)
+            minuto = 00
+            hora = hora + 1
+        FinSi
+        Si (hora == 24)
+            hora = 00
+        FinSi
+    FinSi
+    Devolver(correcto)
+Fin
+-------------------------------------------------------------------
+Algoritmo principal
+    h, m, s son enteros
+    corr es Lógico
+    
+Inicio
+    Repetir
+        Escribir "Este programa suma un segundo a la hora que le des"
+        Escribir "Introduce la hora"
+        Leer (h)
+        Escribir "Introduce los minutos"
+        Leer (m)
+        Escribir "Introduce los segundos"
+        Leer (s)
+        
+        corr = queHoraEs(h,m,s)
+        Si (corr == Falso)
+            Escribir "Por favor, introduce una hora correcta"
+        FinSi
+    MientrasQue (corr == Falso)
+    
+    Escribir "Son las ", h, ":", m, ":", s
+Fin

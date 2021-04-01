@@ -1,0 +1,34 @@
+EJER 2) 
+Algoritmo principal 
+area es real
+circunferencia es real
+radio es real
+ 
+Inicio 
+Escribir "dame el valor del radio" 
+Leer radio
+area = CalcularArea(radio)
+Escribir area
+
+circunferencia = CalcularCircunferencia(radio)
+Escribir circunferencia
+Fin 
+
+
+--------------------------------
+Real CalcularArea (radio es real)
+     area es real
+
+Inicio
+area = Pi * radio^2
+Devolver (area)
+Fin 
+
+-------------------------------
+Real CalcularCircunferencia (radio es real)
+     circunferencia es real 
+
+Inicio
+circunferencia = 2 * Pi * radio
+Devolver (circunferencia)
+Fin

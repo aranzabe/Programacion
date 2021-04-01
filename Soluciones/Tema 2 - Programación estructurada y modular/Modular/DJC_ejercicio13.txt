@@ -1,0 +1,35 @@
+Lógico esPrimo(num es entero)
+    primo es lógico
+    divisor es entero
+    resto es entero
+    
+Inicio
+    divisor = 2
+    primo = Verdadero
+    num = abs(num)
+    
+    Repetir
+        resto = num mod divisor
+        Si (resto == 0)
+            primo = Falso
+        FinSi
+        divisor = divisor + 1
+    MientrasQue (divisor < num y primo = Verdadero)
+    
+    Devolver(primo)
+Fin
+-----------------------------------------------------------------
+Algoritmo principal
+    n es entero
+    
+Inicio
+    Escribir "Este programa te dice si un número es primo o no"
+    Escribir "Introduce un número"
+    Leer n
+    
+    Si (esPrimo(n) == Verdadero)
+        Escribir n, " es primo"
+    SiNo
+        Escribir n, " no es primo"
+    FinSi
+Fin

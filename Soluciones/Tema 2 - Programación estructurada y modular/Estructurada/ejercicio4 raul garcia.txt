@@ -1,0 +1,20 @@
+declaracion 
+
+n1, n2, n3 , res1 enteros
+media real 
+
+INICIO
+
+leer(n1)
+leer(n2)
+leer(n3)
+
+media =n1+n2+n3 /3 
+
+res1=trunc(media)
+
+
+escribir("la media sin decimales es " + res1)
+escribir (" la media con decimales es " + media) 
+
+FIN 

@@ -1,0 +1,36 @@
+Entero calculaSumaDig(num es entero)
+	digito es entero
+	suma es entero
+
+Inicio
+	suma = 0
+	Mientras (num >= 1)
+		digito = num mod 10
+		suma = suma + digito
+		num = num div 10
+	FinMientras
+	Devolver(suma)
+Fin
+------------------------------------------------------------------------------------------------------------------
+Algoritmo principal
+	n, m, sum_n, sum_m son enteros
+	
+Inicio
+	Escribir "Este programa te pide dos números y te dice cuál tiene una suma de dígitos mayor"
+	Escribir "Dame un número entero"
+	Leer n 
+	Escribir "Dame otro número entero"
+	Leer m
+	
+	sum_n = calculaSumaDig(n)
+	sum_m = calculaSumaDig(m)
+	
+	Si (sum_n > sum_m)
+		Escribir "Los dígitos de ", n, " suman una cantidad mayor que los de ", m
+	FinSi
+	Si (sum_m > sum_n)
+		Escribir "Los dígitos de ", m, " suman una cantidad mayor que los de ", n
+	SiNo
+		Escribir "Los dígitos de ambos números suman la misma cantidad"
+	FinSi
+Fin

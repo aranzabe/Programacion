@@ -1,0 +1,29 @@
+Algoritmo principal
+    s, p es real
+    l es entero
+Inicio
+    Escribir "Dame el lado"
+    Leer l
+    s = calculaSuperficie(l)
+    Escribir s
+    p = calculaPerimetro(l)
+    Escribir p
+Fin
+
+-----------------------
+Real calculaSuperficie(lado es entero)
+     sup es real
+Inicio
+     sup = lado * lado
+     Devolver(sup)
+Fin
+-----------------------
+Real calculaPerimetro(lado es entero)
+     per es real
+Inicio
+     per = 4 * lado
+     Devolver per
+Fin
+
+
+

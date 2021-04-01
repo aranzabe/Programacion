@@ -1,0 +1,27 @@
+ALGORITMO PRINCIPAL 
+	anio es entero 
+	res es logico 
+INICIO
+	
+	Escribir("Dime anio")
+	Leer anio 
+    res=calcanio(anio)
+    
+    si res==true entonces
+        Escribir "Es bisiesto"
+    sino 
+        Escribir " No es bisiesto" 
+    fin 
+FIN 
+
+-----------------------------------
+logico calcanio( a entero)
+INICIO
+
+	si anio mod 4==0 entonces 
+		devolver true 
+	sino 	
+		devolver false 
+	fin si 
+	
+FIN 
